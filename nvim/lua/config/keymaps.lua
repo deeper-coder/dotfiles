@@ -4,16 +4,18 @@
 
 local map = LazyVim.safe_keymap_set
 
+-- 文件操作相关快捷键 ------------------------------------------
 -- 删除当前文件全部内容
-map("n", "die", "ggVGd", { desc = "Delete entire file" })
+map("n", "die", "ggVGd", { desc = "删除整个文件内容" })
 
--- 复制当前文件全部内容
-map("n", "yie", "ggVGd", { desc = "Yank entire file" })
+-- 复制当前文件全部内容 
+map("n", "yie", "ggVGd", { desc = "复制整个文件内容" })
 
--- 设置普通模式的删除 (d) 和剪切 (x) 不拷贝到剪贴板
-map("n", "d", '"_d', { desc = "Delete without yanking" })
-map("n", "x", '"_x', { desc = "Cut without yanking" })
+-- 剪切板操作相关快捷键 ---------------------------------------
+-- 普通模式下,使用 d 和 x 删除内容时不复制到剪切板
+map("n", "d", '"_d', { desc = "删除内容(不复制到剪切板)" })
+map("n", "x", '"_x', { desc = "剪切内容(不复制到剪切板)" })
 
--- 视觉模式下的删除和剪切不拷贝到剪贴板
-map("v", "d", '"_d', { desc = "Delete without yanking" })
-map("v", "x", '"_x', { desc = "Cut without yanking" })
+-- 可视模式下,使用 d 和 x 删除内容时不复制到剪切板
+map("v", "d", '"_d', { desc = "删除内容(不复制到剪切板)" })
+map("v", "x", '"_x', { desc = "剪切内容(不复制到剪切板)" })

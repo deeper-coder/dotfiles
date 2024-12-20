@@ -21,98 +21,100 @@
     // 开启Unicode字符高亮
     "editor.unicodeHighlight.ambiguousCharacters": true,
 
+    // ===== 工作区主题和外观 =====
+    // 设置颜色主题
+    "workbench.colorTheme": "Default Dark Modern",
+    // 设置图标主题
+    "workbench.iconTheme": "vscode-jetbrains-icon-theme",
+    // 使用自定义标题栏样式
+    "window.titleBarStyle": "custom",
+    // 设置minimap透明度级别
+    "TransparentMinimap.transparencyLevel": "20",
+    // 设置minimap颜色
+    "TransparentMinimap.minimapColor": "111111",
+    // 设置非焦点窗口的不透明度
+    "accessibility.dimUnfocused.opacity": 0.8,
+
     // ===== 编辑器行为设置 =====
     // 设置默认格式化工具为black
     "editor.defaultFormatter": "ms-python.black-formatter",
     // 禁用预览模式
     "workbench.editor.enablePreview": false,
+    // 启用标签页换行
+    "workbench.editor.wrapTabs": true,
+    // 失去焦点时自动保存
+    "files.autoSave": "onFocusChange",
+    // 禁用符号链接搜索
+    "search.followSymlinks": false,
 
-    // ===== 安全和文件设置 =====
-    // 允许打开不受信任的文件
-    "security.workspace.trust.untrustedFiles": "open",
-    // 禁用本地文件协议处理提示
-    "security.promptForLocalFileProtocolHandling": false,
+    // ===== 终端设置 =====
+    // 设置终端字体大小
+    "terminal.integrated.fontSize": 14,
+    // 设置终端字体
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+    // 设置macOS外部终端为iTerm2
+    "terminal.external.osxExec": "iTerm2.app",
+    // 禁用终端继承环境变量
+    "terminal.integrated.inheritEnv": false,
 
-    // ===== 扩展设置 =====
-    // 设置扩展亲和性
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1
+    // ===== 语言相关设置 =====
+    // Python相关设置
+    "[python]": {
+        "editor.formatOnSave": false,
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnType": true
     },
-
-    // ===== Git设置 =====
-    // 禁用Git同步确认
-    "git.confirmSync": false,
-    "git.openRepositoryInParentFolders": "never",
-
-    // ===== Python设置 =====
+    // 自动补全函数括号
+    "python.analysis.completeFunctionParens": true,
+    // 启用自动导入补全
+    "python.analysis.autoImportCompletions": true,
+    // 在文件目录中执行Python文件
+    "python.terminal.executeInFileDir": true,
+    // 调试时不限制只调试自己的代码
+    "debugpy.debugJustMyCode": false,
     "python.analysis.autoFormatStrings": true,
     "python.analysis.inlayHints.callArgumentNames": "partial",
     "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.typeCheckingMode": "basic",
 
-    // ===== 语言特定设置 =====
-    "[shellscript]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
+    // C/C++相关设置
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
     },
-    "[lua]": {
-        "editor.defaultFormatter": "yinfei.luahelper"
-    },
-
-    // ===== 工作台设置 =====
-    "workbench.settings.applyToAllProfiles": [
-        "workbench.colorCustomizations"
-    ],
-    "vscode_vibrancy.opacity": 0.6,
-
-    // ===== Cursor设置 =====
-    "cursor.chat.alwaysSearchWeb": true,
-
-    // ===== WhichKey设置 =====
-    "whichkey.sortOrder": "alphabetically",
-    "whichkey.delay": 100,
-    "whichkey.bindings": [
-        {
-            "key": ";",
-            "name": "Commands",
-            "type": "command",
-            "command": "workbench.action.showCommands"
-        },
-        {
-            "key": "e",
-            "name": "Editors...",
-            "type": "bindings",
-            "bindings": [
-                {
-                    "key": "s",
-                    "name": "Show all editors",
-                    "type": "command",
-                    "command": "workbench.action.showAllEditors"
-                }
-            ]
-        }
+    // 启用参数名称提示
+    "C_Cpp.inlayHints.parameterNames.enabled": true,
+    // 在左侧显示自动声明类型
+    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
+    // 显示带下划线的参数名称
+    "C_Cpp.inlayHints.parameterNames.hideLeadingUnderscores": false,
+    // 启用引用运算符提示
+    "C_Cpp.inlayHints.referenceOperator.enabled": true,
+    // 设置clang格式化风格
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4}",
+    // 设置C++编译标准
+    "clang.cxxflags": [
+        "-std=c++17"
     ],
 
-    // ===== 文件排除设置 =====
-    "files.exclude": {
-        "**/__pycache__": true,
-        "**/.autocp": true,
-        "**/.cph": true,
-        "**/.idea": true,
-        "**/*.bin": true
+    // Markdown相关设置
+    "[markdown]": {
+        "editor.defaultFormatter": "mervin.markdown-formatter"
     },
 
-    // ===== 代码运行器设置 =====
+    // ===== 开发工具设置 =====
+    // 竞赛编程相关设置
+    "cph.language.cpp.Args": "-std=c++17 -w -O2",
+    "cph.language.cpp.SubmissionCompiler": "GNU G++20 13.2 (64 bit, winlibs)",
+    "cph.general.timeOut": 2000,
+    "cph.language.cpp.Command": "clang++",
+
+    // 代码运行器设置
     "code-runner.clearPreviousOutput": true,
     "code-runner.runInTerminal": true,
     "code-runner.saveFileBeforeRun": true,
     "code-runner.fileDirectoryAsCwd": true,
 
-    // ===== Markdown设置 =====
-    "[markdown]": {
-        "editor.defaultFormatter": "mervin.markdown-formatter"
-    },
-
-    // ===== Neovim设置 =====
+    // ===== Neovim集成设置 =====
     "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
     "vscode-neovim.neovimClean": false,
     "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/settings.vim",
@@ -122,48 +124,328 @@
         }
     },
 
-    // ===== C/C++设置 =====
-    "C_Cpp.inlayHints.parameterNames.enabled": true,
-    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
-    "C_Cpp.inlayHints.parameterNames.hideLeadingUnderscores": false,
-    "C_Cpp.inlayHints.referenceOperator.enabled": true,
-    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4}",
-    "clang.cxxflags": [
-        "-std=c++17"
+    // ===== WhichKey快捷键设置 =====
+    // 按字母顺序排序
+    "whichkey.sortOrder": "alphabetically",
+    // 设置延迟时间(毫秒)
+    "whichkey.delay": 100,
+    // 定义快捷键绑定
+    "whichkey.bindings": [
+        {
+            "key": ";",
+            "name": "命令面板",
+            "type": "command",
+            "command": "workbench.action.showCommands"
+        },
+        {
+            "key": "e",
+            "name": "编辑器操作...",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "s",
+                    "name": "显示所有编辑器",
+                    "type": "command",
+                    "command": "workbench.action.showAllEditors"
+                },
+                {
+                    "key": "a",
+                    "name": "关闭所有编辑器",
+                    "type": "command",
+                    "command": "workbench.action.closeAllEditors"
+                },
+                {
+                    "key": "h",
+                    "name": "移动编辑器到左侧组",
+                    "type": "command",
+                    "command": "workbench.action.moveEditorToLeftGroup"
+                },
+                {
+                    "key": "j",
+                    "name": "移动编辑器到下方组",
+                    "type": "command",
+                    "command": "workbench.action.moveEditorToBelowGroup"
+                },
+                {
+                    "key": "k",
+                    "name": "移动编辑器到上方组",
+                    "type": "command",
+                    "command": "workbench.action.moveEditorToAboveGroup"
+                },
+                {
+                    "key": "l",
+                    "name": "移动编辑器到右侧组",
+                    "type": "command",
+                    "command": "workbench.action.moveEditorToRightGroup"
+                },
+                {
+                    "key": "o",
+                    "name": "关闭其他编辑器",
+                    "type": "command",
+                    "command": "workbench.action.closeOtherEditors"
+                },
+                {
+                    "key": "n",
+                    "name": "下一个编辑器",
+                    "type": "command",
+                    "command": "workbench.action.nextEditor"
+                },
+                {
+                    "key": "p",
+                    "name": "上一个编辑器",
+                    "type": "command",
+                    "command": "workbench.action.previousEditor"
+                },
+                {
+                    "key": "P",
+                    "name": "固定编辑器",
+                    "type": "command",
+                    "command": "workbench.action.pinEditor"
+                },
+                {
+                    "key": "N",
+                    "name": "新建无标题文件",
+                    "type": "command",
+                    "command": "workbench.action.files.newUntitledFile"
+                },
+                {
+                    "key": "u",
+                    "name": "重新打开关闭的编辑器",
+                    "type": "command",
+                    "command": "workbench.action.reopenClosedEditor"
+                },
+                {
+                    "key": "y",
+                    "name": "复制缓冲区到剪贴板",
+                    "type": "commands",
+                    "commands": [
+                        "editor.action.selectAll",
+                        "editor.action.clipboardCopyAction",
+                        "cancelSelection"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "f",
+            "name": "查找和替换...",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "c",
+                    "name": "当前文件中查找",
+                    "type": "command",
+                    "command": "editor.action.startFindReplaceAction"
+                },
+                {
+                    "key": "l",
+                    "name": "定位当前文件",
+                    "type": "command",
+                    "command": "workbench.files.action.showActiveFileInExplorer"
+                },
+                {
+                    "key": "f",
+                    "name": "查找文件",
+                    "type": "command",
+                    "command": "workbench.action.quickOpen"
+                },
+                {
+                    "key": "t",
+                    "name": "查找文本",
+                    "type": "command",
+                    "command": "workbench.action.findInFiles"
+                },
+                {
+                    "key": "p",
+                    "name": "在项目中替换",
+                    "type": "command",
+                    "command": "workbench.action.replaceInFiles"
+                }
+            ]
+        },
+        {
+            "key": "h",
+            "name": "水平分割",
+            "type": "command",
+            "command": "workbench.action.splitEditorDown"
+        },
+        {
+            "key": "m",
+            "name": "切换小地图",
+            "type": "command",
+            "command": "editor.action.toggleMinimap"
+        },
+        {
+            "key": "t",
+            "name": "终端和资源管理器...",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "t",
+                    "name": "切换终端",
+                    "type": "command",
+                    "command": "workbench.action.togglePanel"
+                },
+                {
+                    "key": "f",
+                    "name": "聚焦终端",
+                    "type": "command",
+                    "command": "workbench.action.terminal.focus"
+                },
+                {
+                    "key": "e",
+                    "name": "切换资源管理器",
+                    "type": "command",
+                    "command": "workbench.action.toggleSidebarVisibility"
+                }
+            ]
+        },
+        {
+            "key": "u",
+            "name": "UI切换...",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "b",
+                    "name": "切换侧边栏可见性",
+                    "type": "command",
+                    "command": "workbench.action.toggleSidebarVisibility"
+                },
+                {
+                    "key": "j",
+                    "name": "切换面板可见性",
+                    "type": "command",
+                    "command": "workbench.action.togglePanel"
+                },
+                {
+                    "key": "s",
+                    "name": "选择主题",
+                    "type": "command",
+                    "command": "workbench.action.selectTheme"
+                },
+                {
+                    "key": "t",
+                    "name": "切换活动栏可见性",
+                    "type": "command",
+                    "command": "workbench.action.toggleActivityBarVisibility"
+                }
+            ]
+        },
+        {
+            "key": "v",
+            "name": "垂直分割",
+            "type": "command",
+            "command": "workbench.action.splitEditor"
+        },
+        {
+            "key": "w",
+            "name": "窗口操作...",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "W",
+                    "name": "聚焦上一个编辑器组",
+                    "type": "command",
+                    "command": "workbench.action.focusPreviousGroup"
+                },
+                {
+                    "key": "h",
+                    "name": "向左移动编辑器组",
+                    "type": "command",
+                    "command": "workbench.action.moveActiveEditorGroupLeft"
+                },
+                {
+                    "key": "j",
+                    "name": "向下移动编辑器组",
+                    "type": "command",
+                    "command": "workbench.action.moveActiveEditorGroupDown"
+                },
+                {
+                    "key": "k",
+                    "name": "向上移动编辑器组",
+                    "type": "command",
+                    "command": "workbench.action.moveActiveEditorGroupUp"
+                },
+                {
+                    "key": "l",
+                    "name": "向右移动编辑器组",
+                    "type": "command",
+                    "command": "workbench.action.moveActiveEditorGroupRight"
+                },
+                {
+                    "key": "t",
+                    "name": "切换编辑器组大小",
+                    "type": "command",
+                    "command": "workbench.action.toggleEditorWidths"
+                },
+                {
+                    "key": "m",
+                    "name": "最大化编辑器组",
+                    "type": "command",
+                    "command": "workbench.action.minimizeOtherEditors"
+                },
+                {
+                    "key": "M",
+                    "name": "最大化编辑器组并隐藏侧边栏",
+                    "type": "command",
+                    "command": "workbench.action.maximizeEditor"
+                },
+                {
+                    "key": "=",
+                    "name": "重置编辑器组大小",
+                    "type": "command",
+                    "command": "workbench.action.evenEditorWidths"
+                },
+                {
+                    "key": "z",
+                    "name": "合并所有编辑器组",
+                    "type": "command",
+                    "command": "workbench.action.joinAllGroups"
+                },
+                {
+                    "key": "d",
+                    "name": "关闭编辑器组",
+                    "type": "command",
+                    "command": "workbench.action.closeEditorsInGroup"
+                },
+                {
+                   "key": "x",
+                    "name": "关闭所有编辑器组",
+                    "type": "command",
+                    "command": "workbench.action.closeAllGroups"
+                }
+            ]
+        },
+        {
+            "key": "z",
+            "name": "切换禅模式",
+            "type": "command",
+            "command": "workbench.action.toggleZenMode"
+        }
     ],
-    "[cpp]": {
-        "editor.defaultFormatter": "ms-vscode.cpptools"
+
+    // ===== 文件和安全设置 =====
+    // 设置要在文件浏览器中隐藏的文件和文件夹
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.autocp": true,
+        "**/.cph": true,
+        "**/.idea": true,
+        "**/*.bin": true
     },
+    // 允许打开不受信任的文件
+    "security.workspace.trust.untrustedFiles": "open",
+    // 禁用本地文件协议处理提示
+    "security.promptForLocalFileProtocolHandling": false,
 
-    // ===== 竞赛编程设置 =====
-    "cph.language.cpp.Args": "-std=c++17 -w -O2",
-    "cph.language.cpp.Command": "clang++",
-    "cph.language.cpp.SubmissionCompiler": "GNU G++20 13.2 (64 bit, winlibs)",
-    "cph.general.timeOut": 2000,
-
-    // ===== Python语言设置 =====
-    "[python]": {
-        "editor.formatOnSave": false,
-        "editor.defaultFormatter": "charliermarsh.ruff",
-        "editor.formatOnType": true
+    // ===== 其他设置 =====
+    // 设置扩展亲和性
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
     },
-    "python.analysis.completeFunctionParens": true,
-    "python.analysis.autoImportCompletions": true,
-    "python.terminal.executeInFileDir": true,
-    "debugpy.debugJustMyCode": false,
-
-    // ===== 工作台和终端设置 =====
-    "workbench.editor.wrapTabs": true,
-    "files.autoSave": "onFocusChange",
-    "search.followSymlinks": false,
-    "terminal.integrated.fontSize": 14,
-    "terminal.integrated.fontFamily": "FiraCode Nerd Font",
-    "terminal.external.osxExec": "iTerm2.app",
-    "terminal.integrated.inheritEnv": false,
-    "workbench.colorTheme": "Default Dark Modern",
-    "workbench.iconTheme": "vscode-jetbrains-icon-theme",
-    "window.titleBarStyle": "custom",
-    "TransparentMinimap.transparencyLevel": "20",
-    "TransparentMinimap.minimapColor": "111111",
-    "accessibility.dimUnfocused.opacity": 0.8
-}
+    // Git相关设置
+    "git.confirmSync": false,
+    "git.openRepositoryInParentFolders": "never",
+    // Cursor设置
+    "cursor.chat.alwaysSearchWeb": true
+  }

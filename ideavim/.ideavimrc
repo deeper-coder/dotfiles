@@ -1,17 +1,5 @@
-"--插件
-set NERDTree
-set easymotion
-set surround
-set multiple-cursors
-set which-key
-
-"--设置whichkey单步等待时长
-set timeoutlen=3000
-"--设置whichkey呼出延迟时长
-let g:WhichKey_DefaultDelay = 500
-
 " ================================================================================================
-" = Basic settings =====================================
+" = 基础设置 =====================================
 " ================================================================================================
 "--设置在光标距离窗口顶部或底部一定行数时，开始滚动屏幕内容的行为
 set scrolloff=10
@@ -32,7 +20,7 @@ set hlsearch
 set number relativenumber
 
 "--递增搜索功能：在执行搜索（使用 / 或 ? 命令）时，
-"Vim 会在您输入搜索模式的过程中逐步匹配并高亮显示匹配的文本。
+"--会在输入搜索模式的过程中逐步匹配并高亮显示匹配的文本
 set incsearch
 
 "--高亮复制的文本
@@ -42,10 +30,31 @@ set highlightedyank
 set keep-english-in-normal
 
 " ================================================================================================
-" = No Leader Keymaps =====================================
+" = 插件设置 =====================================
+" ================================================================================================
+"--启用插件
+set NERDTree
+set easymotion
+set surround
+set multiple-cursors
+set which-key
+
+"--设置whichkey单步等待时长
+set timeoutlen=3000
+"--设置whichkey呼出延迟时长
+let g:WhichKey_DefaultDelay = 500
+
+"--EasyMotion配置
+"启用大小写不敏感功能
+let g:EasyMotion_smartcase = 1
+"使用小写标签
+let g:EasyMotion_use_upper = 0
+
+" ================================================================================================
+" = 基础键位映射 =====================================
 " ================================================================================================
 
-"--在普通和插入模式下，向下交换行/向上交换行
+"--在普通和插入模式下，向下/向上交换行
 nnoremap <D-j> :m +1<CR>
 nnoremap <D-k> :m -2<CR>
 inoremap <D-j> <Esc> :m +1<CR>gi
@@ -76,16 +85,15 @@ nnoremap d "_d
 nnoremap D "_D
 vnoremap d "_d
 
-"--使用退格键删除光标前一个字符（普通模式）
+"--使用退格键删除光标前一个字符（普通模式和可视模式）
 nnoremap <Backspace> i<BS><Esc>l
-"--使用退格键删除光标前一个字符（可视模式）
 vmap <Backspace> di
 
 "--函数定义跳转
 nnoremap gd :action GotoDeclaration<CR>
 
+"--终端和界面操作
 map <C-t> :action ActivateTerminalToolWindow<CR>
-"--禅模式
 map <C-z> :action ToggleDistractionFreeMode<CR>
 map <c-e> :NERDTree<CR>
 
@@ -98,159 +106,109 @@ map <c-=> <Action>(Unsplit)
 map <c-m> <Action>(MoveEditorToOppositeTabGroup)
 
 " ================================================================================================
-" = Leader Keymaps =====================================
+" = Leader键位映射 =====================================
 " ================================================================================================
 
-"将<leader>设置为 空格 键
+"--将<leader>设置为空格键
 let mapleader=" "
 
-"这一行为在按下<leader>后显示的
+"--这一行为在按下<leader>后显示的
 let g:WhichKeyDesc_LeaderKeymap= "<leader> LeaderKeymap"
 
-"========== b ==========
-
-"========== c ==========
+"--代码相关操作
 let g:WhichKeyDesc_CodeAndClose = "<leader>c CodeAndClose"
-
-"关闭所有标签页
 let g:WhichKeyDesc_CodeAndClose_CloseAllEditors = "<leader>ca CloseAllEditors"
 nmap <leader>ca <action>(CloseAllEditors)
-"关闭当前标签页
 let g:WhichKeyDesc_CodeAndClose_CloseEditor = "<leader>ce CloseEditor"
 nmap <leader>ce :action CloseEditor<CR>
-"获得当前类路径
 let g:WhichKeyDesc_CodeAndClose_CopyReference = "<leader>cp CopyReference"
 nmap <Leader>cp :action CopyReference<CR>
 
-"========== d ==========
+"--调试相关
 let g:WhichKeyDesc_Debug = "<leader>d Debug"
 nmap <Leader>db <action>(Debug)
 
-"========== e ==========
-
-"========== f ==========
+"--查找和格式化
 let g:WhichKeyDesc_FindOrFormat = "<leader>f FindOrFormat"
-
-"快速 导航/查找 项目中的其他文件
 let g:WhichKeyDesc_FindOrFormat_FindFile = "<leader>ff FindFile"
 nmap <leader>ff <action>(GotoFile)
-"将当前编辑的文件在项目视图中进行选中定位
 let g:WhichKeyDesc_FindOrFormat_FindFileLocation = "<leader>fl FindFileLocation"
 nmap <leader>fl <action>(SelectInProjectView)
-"在整个项目中查找指定的文本、关键字或正则表达式，包括代码文件、配置文件和其他文件等
 let g:WhichKeyDesc_FindOrFormat_FindText = "<leader>ft FindText"
 nmap <leader>ft <action>(FindInPath)
-"打开"Find Action"（查找动作）对话框
 let g:WhichKeyDesc_FindOrFormat_Commands = "<leader>fc Commands"
 nmap <leader>fc <action>(GotoAction)
-"重新格式化代码，使其符合预定义的代码样式和规范 \| 优化导入语句，删除未使用的导入，并将导入语句按字母顺序进行排列
 let g:WhichKeyDesc_FindOrFormat_Format = "<leader>fm Format"
 nmap <leader>fm <action>(ReformatCode) \| <action>(OptimizeImports)
 
-"========== g ==========
-
-"========== h ==========
+"--标签页导航
 let g:WhichKeyDesc_PreviousTab = "<leader>h PreviousTab"
-"切换到上一个标签页
 nmap <leader>h :action PreviousTab<CR>
-
-"========== i ==========
-let g:WhichKeyDesc_ImplementMethods = "<leader>im ImplementMethods"
-nnoremap <Leader>im :action ImplementMethods<CR>
-
-"========== j ==========
-"普通模式下在行尾一个分号，然后进入插入模式并在当前行的下方新建一行
-let g:WhichKeyDesc_InsertSemicolon = "<leader>j InsertSemicolon"
-nmap <leader>j A;kko
-
-"========== l ==========
-"切换到下一个标签页
 let g:WhichKeyDesc_NextTab = "<leader>l NextTab"
 nmap <leader>l :action NextTab<CR>
 
-"========== m ==========
+"--方法实现
+let g:WhichKeyDesc_ImplementMethods = "<leader>im ImplementMethods"
+nnoremap <Leader>im :action ImplementMethods<CR>
 
-"========== n ==========
+"--插入分号并新建行
+let g:WhichKeyDesc_InsertSemicolon = "<leader>j InsertSemicolon"
+nmap <leader>j A;kko
+
+"--新建文件操作
 let g:WhichKeyDesc_NERDTreeOrNew = "<leader>n New"
-
-"在当前目录新建文件夹
 let g:WhichKeyDesc_NERDTreeOrNew_NewDir = "<leader>nd NewDir"
 nmap <leader>nd <action>(NewDir)
-"在当前目录新建类
 let g:WhichKeyDesc_NERDTreeOrNew_NewClass = "<leader>nc NewClass"
 nmap <leader>nc <action>(NewClass)
 
-"========== p ==========
-
-"========== r ==========
+"--运行和重命名
 let g:WhichKeyDesc_RunOrRe = "<leader>r RunOrRe"
-
-"运行当前编辑器中的文件或类
 let g:WhichKeyDesc_RunOrRe_RunCalss = "<leader>rc RunClass"
 nmap <leader>rc :action RunClass<CR>
-"在代码中快速更改一个标识符的名称，并自动处理所有相关的引用
 let g:WhichKeyDesc_RunOrRe_RenameElement = "<leader>re RenameElement"
 map <leader>re <action>(RenameElement)
-"修改当前文件的文件名
 let g:WhichKeyDesc_RunOrRe_RenameFile = "<leader>rf RenameFile"
 nnoremap <Leader>rf :action RenameFile<CR>
-" source ~/.vimrc
-" map r to reload ideavimrc in normal mode
 noremap <leader>rr <ESC>:source ~/.ideavimrc<cr>
 
-"========== s ==========
+"--显示相关操作
 let g:WhichKeyDesc_Show = "<leader>s Show"
-
-"显示当前打开文件的文件结构弹出窗口，其中包含文件中的类、方法、字段等结构
 let g:WhichKeyDesc_Show_FileStructure = "<leader>ss ShowFileStructure"
 nmap <leader>ss <action>(FileStructurePopup)
-"显示用法
 let g:WhichKeyDesc_Show_ShowUsages = "<leader>su ShowUsages"
 nnoremap <Leader>su :action ShowUsages<CR>
-"显示字节码
 let g:WhichKeyDesc_Show_ShowByteCodeJclasslib = "<leader>sb ShowByteCodeJclasslib"
 nnoremap <Leader>sb :action ShowByteCodeJclasslib<CR>
 
-"========= t ==========
+"--终端操作
 let g:WhichKeyDesc_OpenInTerminal = "<leader>t OpenInTerminal"
 nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
 
-"========= z ==========
+"--代码折叠
 let g:WhichKeyDesc_Zip = "<leader>z Zip"
-
-"展开所有代码折叠区域
 let g:WhichKeyDesc_Zip_unZipAll = "<leader>zo unZipAll"
 nmap <leader>zo <action>(ExpandAllRegions)
-"折叠所有代码折叠区域
 let g:WhichKeyDesc_Zip_ZipAll = "<leader>zc ZipAll"
 nmap <leader>zc <action>(CollapseAllRegions)
 
-"Turn on case insensitive feature
-let g:EasyMotion_smartcase = 1
-"Use upper target labels and type as a lower case
-let g:EasyMotion_use_upper = 0
-
-" move to character
+"--EasyMotion快捷键
+"字符跳转
 nmap f <Plug>(easymotion-s2)
 xmap f <Plug>(easymotion-s2)
 omap f <Plug>(easymotion-s2)
-" move to word
+"单词跳转
 nmap F <Plug>(easymotion-bd-w)
 xmap F <Plug>(easymotion-bd-w)
 omap F <Plug>(easymotion-bd-w)
 
-" ace jump"
-" Press `s` to activate AceJump
+"--AceJump快捷键
+"按's'激活AceJump
 nnoremap s :<C-u>action AceAction<CR>
-" Press `S` to activate Target Mode
-" 在 Target 模式下会跳转到目标，并选中目标整个Word"
+"按'S'激活Target模式（跳转并选中整个单词）
 nnoremap S :<C-u>action AceTargetAction<CR>
-" Press `g` to activate Line Mode
-" nnoremap g :action AceLineAction<CR>
 
-" built in search looks better
-" nnoremap / :action Find<cr>
-" but preserve ideavim search
+"--搜索和替换
 nnoremap g/ :action FindInPath<cr>
 noremap ' :action Replace<cr>
 noremap g' :action ReplaceInPath<cr>
