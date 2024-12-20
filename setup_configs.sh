@@ -34,7 +34,6 @@ main() {
     mkdir -p ~/.config/karabiner
     mkdir -p ~/.tmux
     mkdir -p ~/.config/aerospace
-    mkdir -p ~/.config/cursor
 
     # 创建配置文件链接
     create_link "$DOTFILES/nvim" ~/.config/nvim
