@@ -1,0 +1,169 @@
+{
+    // ===== 编辑器基础外观设置 =====
+    // 设置编辑器字体大小为14px
+    "editor.fontSize": 14,
+    // 设置行高为1.5倍
+    "editor.lineHeight": 1.5,
+    // 设置字体粗细为520(介于regular和bold之间)
+    "editor.fontWeight": "520",
+    // 设置字体族,按优先级排序
+    "editor.fontFamily": "CaskaydiaCove Nerd Font, Fira Code, Menlo",
+    // 允许连字
+    "editor.fontLigatures": true,
+    // 使用相对行号
+    "editor.lineNumbers": "relative",
+    // 启用minimap
+    "editor.minimap.enabled": true,
+    // 启用关联编辑功能
+    "editor.linkedEditing": true,
+    // 关闭辅助功能支持
+    "editor.accessibilitySupport": "off",
+    // 开启Unicode字符高亮
+    "editor.unicodeHighlight.ambiguousCharacters": true,
+
+    // ===== 编辑器行为设置 =====
+    // 设置默认格式化工具为black
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    // 禁用预览模式
+    "workbench.editor.enablePreview": false,
+
+    // ===== 安全和文件设置 =====
+    // 允许打开不受信任的文件
+    "security.workspace.trust.untrustedFiles": "open",
+    // 禁用本地文件协议处理提示
+    "security.promptForLocalFileProtocolHandling": false,
+
+    // ===== 扩展设置 =====
+    // 设置扩展亲和性
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+
+    // ===== Git设置 =====
+    // 禁用Git同步确认
+    "git.confirmSync": false,
+    "git.openRepositoryInParentFolders": "never",
+
+    // ===== Python设置 =====
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.inlayHints.callArgumentNames": "partial",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.typeCheckingMode": "basic",
+
+    // ===== 语言特定设置 =====
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "[lua]": {
+        "editor.defaultFormatter": "yinfei.luahelper"
+    },
+
+    // ===== 工作台设置 =====
+    "workbench.settings.applyToAllProfiles": [
+        "workbench.colorCustomizations"
+    ],
+    "vscode_vibrancy.opacity": 0.6,
+
+    // ===== Cursor设置 =====
+    "cursor.chat.alwaysSearchWeb": true,
+
+    // ===== WhichKey设置 =====
+    "whichkey.sortOrder": "alphabetically",
+    "whichkey.delay": 100,
+    "whichkey.bindings": [
+        {
+            "key": ";",
+            "name": "Commands",
+            "type": "command",
+            "command": "workbench.action.showCommands"
+        },
+        {
+            "key": "e",
+            "name": "Editors...",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "s",
+                    "name": "Show all editors",
+                    "type": "command",
+                    "command": "workbench.action.showAllEditors"
+                }
+            ]
+        }
+    ],
+
+    // ===== 文件排除设置 =====
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.autocp": true,
+        "**/.cph": true,
+        "**/.idea": true,
+        "**/*.bin": true
+    },
+
+    // ===== 代码运行器设置 =====
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.fileDirectoryAsCwd": true,
+
+    // ===== Markdown设置 =====
+    "[markdown]": {
+        "editor.defaultFormatter": "mervin.markdown-formatter"
+    },
+
+    // ===== Neovim设置 =====
+    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+    "vscode-neovim.neovimClean": false,
+    "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/settings.vim",
+    "vscode-neovim.compositeKeys": {
+        "kk": {
+            "command": "vscode-neovim.escape"
+        }
+    },
+
+    // ===== C/C++设置 =====
+    "C_Cpp.inlayHints.parameterNames.enabled": true,
+    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
+    "C_Cpp.inlayHints.parameterNames.hideLeadingUnderscores": false,
+    "C_Cpp.inlayHints.referenceOperator.enabled": true,
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4}",
+    "clang.cxxflags": [
+        "-std=c++17"
+    ],
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+
+    // ===== 竞赛编程设置 =====
+    "cph.language.cpp.Args": "-std=c++17 -w -O2",
+    "cph.language.cpp.Command": "clang++",
+    "cph.language.cpp.SubmissionCompiler": "GNU G++20 13.2 (64 bit, winlibs)",
+    "cph.general.timeOut": 2000,
+
+    // ===== Python语言设置 =====
+    "[python]": {
+        "editor.formatOnSave": false,
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnType": true
+    },
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.terminal.executeInFileDir": true,
+    "debugpy.debugJustMyCode": false,
+
+    // ===== 工作台和终端设置 =====
+    "workbench.editor.wrapTabs": true,
+    "files.autoSave": "onFocusChange",
+    "search.followSymlinks": false,
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+    "terminal.external.osxExec": "iTerm2.app",
+    "terminal.integrated.inheritEnv": false,
+    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.iconTheme": "vscode-jetbrains-icon-theme",
+    "window.titleBarStyle": "custom",
+    "TransparentMinimap.transparencyLevel": "20",
+    "TransparentMinimap.minimapColor": "111111",
+    "accessibility.dimUnfocused.opacity": 0.8
+}

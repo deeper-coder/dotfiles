@@ -1,0 +1,212 @@
+# 你可以用它来添加在 macOS 用户会话登录后运行的命令
+# 'start-at-login' 需要设置为 'true' 才能使 'after-login-command' 生效
+# 可用命令: https://nikitabobko.github.io/AeroSpace/commands
+after-login-command = []
+
+# 你可以用它来添加在 AeroSpace 启动后运行的命令
+# 'after-startup-command' 在 'after-login-command' 之后运行
+# 可用命令: https://nikitabobko.github.io/AeroSpace/commands
+after-startup-command = []
+
+# 在登录时启动 AeroSpace
+start-at-login = false
+
+# 标准化设置. 参见: https://nikitabobko.github.io/AeroSpace/guide#normalization
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# 参见: https://nikitabobko.github.io/AeroSpace/guide#layouts
+# 'accordion-padding' 指定手风琴布局的内边距大小
+# 你可以设置为 0 来禁用内边距功能
+accordion-padding = 30
+
+# 可选值: tiles|accordion
+default-root-container-layout = 'accordion'
+
+# 可选值: horizontal|vertical|auto
+# 'auto' 表示: 宽屏显示器(宽度大于高度)使用水平方向
+#             竖屏显示器(高度大于宽度)使用垂直方向
+default-root-container-orientation = 'auto'
+
+# 当焦点显示器改变时鼠标跟随焦点
+# 如果你不喜欢这个行为，可以从配置中删除它
+# 参见 https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
+# 参见 https://nikitabobko.github.io/AeroSpace/commands#move-mouse
+# 默认值(如果你省略此键): on-focused-monitor-changed = []
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+# 你可以通过切换此标志来有效关闭 macOS "隐藏应用程序"(cmd-h)功能
+# 如果你不使用这个 macOS 功能，但不小心按到 cmd-h 或 cmd-alt-h 键时很有用
+# 另见: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
+automatically-unhide-macos-hidden-apps = false
+
+# 可选值: (qwerty|dvorak)
+# 参见 https://nikitabobko.github.io/AeroSpace/guide#key-mapping
+[key-mapping]
+preset = 'qwerty'
+
+# 窗口之间(inner-*)和显示器边缘(outer-*)的间隙
+# 可选值:
+# - 固定值:     gaps.outer.top = 8
+# - 按显示器:  gaps.outer.top = [{ monitor.main = 16 }, { monitor."some-pattern" = 32 }, 24]
+#              在这个例子中，24 是没有匹配时的默认值
+#              显示器模式与 'workspace-to-monitor-force-assignment' 相同
+#              参见: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
+[gaps]
+inner.horizontal = 5
+inner.vertical =   5
+outer.left =       0
+outer.bottom =     0
+outer.top =        5
+outer.right =      0
+
+# 'main' 绑定模式声明
+# 参见: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+# 'main' 绑定模式必须始终存在
+# 默认值(如果你省略此键): mode.main.binding = {}
+[mode.main.binding]
+
+# 所有可用按键:
+# - 字母键.        a, b, c, ..., z
+# - 数字键.        0, 1, 2, ..., 9
+# - 小键盘数字.    keypad0, keypad1, keypad2, ..., keypad9
+# - 功能键.        f1, f2, ..., f20
+# - 特殊键.        minus, equal, period, comma, slash, backslash, quote, semicolon, backtick,
+#                  leftSquareBracket, rightSquareBracket, space, enter, esc, backspace, tab
+# - 小键盘特殊键.  keypadClear, keypadDecimalMark, keypadDivide, keypadEnter, keypadEqual,
+#                  keypadMinus, keypadMultiply, keypadPlus
+# - 方向键.        left, down, up, right
+
+# 所有可用修饰键: cmd, alt, ctrl, shift
+
+# 所有可用命令: https://nikitabobko.github.io/AeroSpace/commands
+
+# 参见: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
+# 你可以取消下面几行的注释来使用 alt + enter 快捷键打开终端(类似 i3)
+# alt-enter = '''exec-and-forget osascript -e '
+# tell application "Terminal"
+#     do script
+#     activate
+# end tell'
+# '''
+
+# 参见: https://nikitabobko.github.io/AeroSpace/commands#layout
+alt-slash = 'layout tiles horizontal vertical'
+alt-comma = 'layout accordion horizontal vertical'
+
+# 参见: https://nikitabobko.github.io/AeroSpace/commands#focus
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+# 参见: https://nikitabobko.github.io/AeroSpace/commands#move
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+
+# 参见: https://nikitabobko.github.io/AeroSpace/commands#resize
+alt-shift-minus = 'resize smart -50'
+alt-shift-equal = 'resize smart +50'
+
+# 参见: https://nikitabobko.github.io/AeroSpace/commands#workspace
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
+alt-b = 'workspace Browser'
+alt-c = 'workspace Code'
+alt-m = 'workspace Music'
+alt-s = 'workspace Social'
+alt-t = 'workspace Terminal'
+
+# 参见: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
+alt-shift-b = 'move-node-to-workspace Browser'
+alt-shift-c = 'move-node-to-workspace Code'
+alt-shift-m = 'move-node-to-workspace Music'
+alt-shift-s = 'move-node-to-workspace Social'
+alt-shift-t = 'move-node-to-workspace Terminal'
+
+# 参见: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
+alt-tab = 'workspace-back-and-forth'
+# 参见: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
+alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
+# 参见: https://nikitabobko.github.io/AeroSpace/commands#mode
+alt-shift-semicolon = 'mode service'
+
+# 'service' 绑定模式声明
+# 参见: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+[mode.service.binding]
+esc = ['reload-config', 'mode main']
+r = ['flatten-workspace-tree', 'mode main'] # 重置布局
+f = ['layout floating tiling', 'mode main'] # 在浮动和平铺布局之间切换
+backspace = ['close-all-windows-but-current', 'mode main']
+
+# sticky 功能尚未支持 https://github.com/nikitabobko/AeroSpace/issues/2
+#s = ['layout sticky tiling', 'mode main']
+
+alt-shift-h = ['join-with left', 'mode main']
+alt-shift-j = ['join-with down', 'mode main']
+alt-shift-k = ['join-with up', 'mode main']
+alt-shift-l = ['join-with right', 'mode main']
+
+down = 'volume down'
+up = 'volume up'
+shift-down = ['volume set 0', 'mode main']
+
+[[on-window-detected]]
+if.app-id = 'com.tencent.WeWorkMac'
+run = "move-node-to-workspace Social"
+
+[[on-window-detected]]
+if.app-id = 'com.alibaba.DingTalkMac'
+run = "move-node-to-workspace Social"
+
+[[on-window-detected]]
+if.app-id = "dev.warp.Warp-Stable"
+run = "move-node-to-workspace Terminal"
+
+[[on-window-detected]]
+if.app-id = "company.thebrowser.Browser"
+run = "move-node-to-workspace Browser"
+
+[[on-window-detected]]
+if.window-title-regex-substring = '(setting|设置)'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.window-title-regex-substring = '(Picture-in-Picture|画中画)'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.liguangming.Shadowrocket'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.tencent.xinWeChat'
+if.window-title-regex-substring = '^(?!WeChat \(Chats\)|微信 \(聊天\)).*$'
+run = ['layout floating', 'move-node-to-workspace Social']
+
+exec-on-workspace-change = ['/bin/bash', '-c',
+    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE'
+]

@@ -1,0 +1,31 @@
+# VS Code
+.vscode/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Logs
+*.log
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
