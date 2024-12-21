@@ -159,3 +159,9 @@ alias men='tldr'
 alias inv='nvim $(fzf -m --preview="bat --color=always {}")'
 alias ls="eza --icons=always"
 alias cd="z"
+alias tm='tmux'
+alias tma='tmux a -t'
+alias tml='tmux list-sessions'
+alias tmk='tmux kill-session -a'
+alias tmn='tmux new -s'
+alias tmd='tmux detach'

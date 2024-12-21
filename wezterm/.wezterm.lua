@@ -39,7 +39,7 @@ end)
 config.hide_tab_bar_if_only_one_tab = false  -- 单标签时不隐藏标签栏
 config.tab_bar_at_bottom = true  -- 标签栏位于底部
 config.use_fancy_tab_bar = false  -- 不使用花哨的标签栏
-config.tab_and_split_indices_are_zero_based = true  -- 标签和分割索引从0开始
+config.tab_and_split_indices_are_zero_based = false  -- 标签和分割索引从1开始
 
 -- 键盘设置
 -- ---------------------------------------------------
@@ -149,11 +149,11 @@ config.keys = {
 }
 
 -- 添加标签页快速切换快捷键 (0-9)
-for i = 0, 9 do
+for i = 1, 9 do
     table.insert(config.keys, {
         key = tostring(i),
         mods = "LEADER",
-        action = wezterm.action.ActivateTab(i)
+        action = wezterm.action.ActivateTab(i - 1)
     })
 end
 

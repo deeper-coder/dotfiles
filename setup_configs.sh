@@ -41,8 +41,8 @@ main() {
     create_link "$DOTFILES/karabiner/karabiner.json" ~/.config/karabiner/karabiner.json
     create_link "$DOTFILES/tmux/.tmux.conf" ~/.tmux.conf
     create_link "$DOTFILES/zsh/.zshrc" ~/.zshrc
-    create_link "$DOTFILES/aerospace/.aerospace.toml" ~/.config/aerospace/aerospace.toml
     create_link "$DOTFILES/ideavim/.ideavimrc" ~/.ideavimrc
+    create_link "$DOTFILES/aerospace/.aerospace.toml" ~/.config/aerospace/aerospace.toml
 
     print_message "配置文件链接创建完成！"
     print_message "请重启终端以使更改生效。"
