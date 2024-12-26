@@ -37,23 +37,19 @@ CASE_SENSITIVE="true"     # 区分大小写补全
 # 设置 ZSH 主题
 # 如果设置为 "random"，每次加载 oh-my-zsh 时会随机加载一个主题
 # 要查看加载了哪个主题，运行: echo $RANDOM_THEME
-ZSH_THEME="powerlevel10k/powerlevel10k"
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="robbyrussell"
 
 # Powerlevel10k 即时提示配置
 # 需要控制台输入的初始化代码（如密码提示、[y/n]确认等）必须放在此块之上
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-# Powerlevel10k 主题配置
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
+## Powerlevel10k 主题配置
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # -------------------------- 插件配置 --------------------------
-plugins=(git zsh-autosuggestions)
-
-# 加载 oh-my-zsh
-source $ZSH/oh-my-zsh.sh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+plugins=(git zsh-autosuggestions, zsh-syntax-highlighting)
 
 # -------------------------- 开发环境配置 --------------------------
 # JDK 配置
@@ -80,17 +76,20 @@ export RABBIT_HOME=/opt/homebrew/Cellar/rabbitmq/3.12.12
 export PATH=$PATH:$RABBIT_HOME/sbin
 
 # Conda 环境配置
-__conda_setup="$('/Users/pluto/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/pluto/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/pluto/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/pluto/opt/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/pluto/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/pluto/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/pluto/opt/anaconda3/bin:$PATH"
+        export PATH="/Users/pluto/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
+# <<< conda initialize <<<
 
 # -------------------------- FZF 配置 --------------------------
 # 设置 fzf 快捷键绑定和模糊补全
@@ -137,7 +136,7 @@ _fzf_comprun() {
 
 # -------------------------- 网络代理配置 --------------------------
 # Socks5 代理
-export ALL_PROXY=socks5://127.0.0.1:10080
+# export ALL_PROXY=socks5://127.0.0.1:10080
 # HTTP/HTTPS 代理
 # export http_proxy="http://127.0.0.1:10082"
 # export https_proxy="http://127.0.0.1:10081"
@@ -165,3 +164,19 @@ alias tml='tmux list-sessions'
 alias tmk='tmux kill-session -a'
 alias tmn='tmux new -s'
 alias tmd='tmux detach'
+alias cc='conda activate'
+alias szsh='source ~/.zshrc'
+
+export EDITOR="nvim"
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+# starship 初始化
+eval "$(starship init zsh)"

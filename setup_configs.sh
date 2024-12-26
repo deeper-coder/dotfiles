@@ -24,6 +24,16 @@ create_link() {
     print_message "创建链接: $src -> $dst"
 }
 
+# 设置 Yazi 配置
+setup_yazi() {
+    print_message "设置 Yazi 配置..."
+    mkdir -p ~/.config/yazi
+    create_link "$DOTFILES/yazi/yazi.toml" ~/.config/yazi/yazi.toml
+    create_link "$DOTFILES/yazi/keymap.toml" ~/.config/yazi/keymap.toml
+    create_link "$DOTFILES/yazi/theme.toml" ~/.config/yazi/theme.toml
+    print_message "Yazi 配置完成！"
+}
+
 # 主设置函数
 main() {
     print_message "开始创建配置文件链接..."
@@ -44,6 +54,9 @@ main() {
     create_link "$DOTFILES/ideavim/.ideavimrc" ~/.ideavimrc
     create_link "$DOTFILES/aerospace/.aerospace.toml" ~/.config/aerospace/aerospace.toml
 
+    # 设置 Yazi 配置
+    setup_yazi
+    
     print_message "配置文件链接创建完成！"
     print_message "请重启终端以使更改生效。"
 }

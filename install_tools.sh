@@ -80,6 +80,7 @@ main() {
     # 安装基础 shell 环境
     print_message "安装基础 shell 环境..."
     install_tool "zsh" ""
+    install_tool "git" ""
     install_tool "tmux" ""
     install_tool "lua" ""
     install_tool "Wezterm" "--cask wezterm"

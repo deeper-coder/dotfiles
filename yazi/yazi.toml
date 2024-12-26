@@ -1,0 +1,220 @@
+# 使用 https://taplo.tamasfe.dev/ 这样的 TOML 检查工具可以验证你的配置。
+# 如果遇到任何问题，请在 https://github.com/yazi-rs/schemas 提交 issue。
+"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+
+[manager]
+ratio          = [ 2, 4, 3 ]  # 左侧文件列表、预览窗口、右侧属性窗口的比例
+sort_by        = "alphabetical"  # 排序方式：按字母顺序
+sort_sensitive = false  # 排序是否区分大小写
+sort_reverse 	 = false  # 是否反向排序
+sort_dir_first = true   # 目录是否优先显示
+sort_translit  = false  # 是否使用音译排序
+linemode       = "none" # 文件列表显示模式
+show_hidden    = true   # 是否显示隐藏文件
+show_symlink   = true   # 是否显示符号链接
+scrolloff      = 5      # 光标距离边缘的最小行数
+mouse_events   = [ "click", "scroll" ]  # 启用的鼠标事件
+title_format   = "Yazi: {cwd}"  # 窗口标题格式
+
+[preview]
+wrap            = "no"    # 预览文本是否自动换行
+tab_size        = 2       # Tab 的空格数
+max_width       = 1200     # 预览窗口最大宽度
+max_height      = 1000     # 预览窗口最大高度
+cache_dir       = ""      # 缓存目录
+image_delay     = 30      # 图片预览延迟(毫秒)
+image_filter    = "triangle"  # 图片缩放滤镜
+image_quality   = 75      # 图片质量
+sixel_fraction  = 15      # Sixel 图形分辨率
+ueberzug_scale  = 1      # Ueberzug 缩放比例
+ueberzug_offset = [ 0, 0, 0, 0 ]  # Ueberzug 偏移量 [上, 右, 下, 左]
+
+[opener]
+edit = [
+	{ run = '${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+	{ run = 'code %*',    orphan = true, desc = "code",           for = "windows" },
+	{ run = 'code -w %*', block = true,  desc = "code (block)",   for = "windows" },
+]
+open = [
+	{ run = 'xdg-open "$1"',                desc = "Open", for = "linux" },
+	{ run = 'open "$@"',                    desc = "Open", for = "macos" },
+	{ run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
+]
+reveal = [
+	{ run = 'xdg-open "$(dirname "$1")"',           desc = "Reveal", for = "linux" },
+	{ run = 'open -R "$1"',                         desc = "Reveal", for = "macos" },
+	{ run = 'explorer /select,"%1"', orphan = true, desc = "Reveal", for = "windows" },
+	{ run = '''exiftool "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show EXIF", for = "unix" },
+]
+extract = [
+	{ run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },
+	{ run = 'ya pub extract --list %*',   desc = "Extract here", for = "windows" },
+]
+play = [
+	{ run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
+	{ run = 'mpv --force-window %*', orphan = true, for = "windows" },
+	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
+]
+
+[open]
+rules = [
+	# 文件夹
+	{ name = "*/", use = [ "edit", "open", "reveal" ] },
+	# 文本文件
+	{ mime = "text/*", use = [ "edit", "reveal" ] },
+	# 图片文件
+	{ mime = "image/*", use = [ "open", "reveal" ] },
+	# 媒体文件
+	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
+	# 压缩文件
+	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract", "reveal" ] },
+	# JSON 文件
+	{ mime = "application/{json,ndjson}", use = [ "edit", "reveal" ] },
+	{ mime = "*/javascript", use = [ "edit", "reveal" ] },
+	# 空文件
+	{ mime = "inode/empty", use = [ "edit", "reveal" ] },
+	# 其他文件
+	{ name = "*", use = [ "open", "reveal" ] },
+]
+
+[tasks]
+micro_workers    = 10     # 微任务工作线程数
+macro_workers    = 10     # 宏任务工作线程数
+bizarre_retry    = 3      # 异常重试次数
+image_alloc      = 536870912  # 图片内存分配限制 (512MB)
+image_bound      = [ 0, 0 ]   # 图片尺寸限制 [宽, 高]
+suppress_preload = false      # 是否禁用预加载
+
+[plugin]
+
+fetchers = [
+	# MIME 类型检测
+	{ id = "mime", name = "*", run = "mime", if = "!mime", prio = "high" },
+]
+spotters = [
+	{ name = "*/", run = "folder" },
+	# 代码文件
+	{ mime = "text/*", run = "code" },
+	{ mime = "*/{xml,javascript,wine-extension-ini}", run = "code" },
+	# 图片文件
+	{ mime = "image/{avif,hei?,jxl,svg+xml}", run = "magick" },
+	{ mime = "image/*", run = "image" },
+	# 视频文件
+	{ mime = "video/*", run = "video" },
+	# 其他文件
+	{ name = "*", run = "file" },
+]
+preloaders = [
+	# 图片预加载
+	{ mime = "image/{avif,hei?,jxl,svg+xml}", run = "magick" },
+	{ mime = "image/*", run = "image" },
+	# 视频预加载
+	{ mime = "video/*", run = "video" },
+	# PDF 预加载
+	{ mime = "application/pdf", run = "pdf" },
+	# 字体预加载
+	{ mime = "font/*", run = "font" },
+	{ mime = "application/ms-opentype", run = "font" },
+]
+previewers = [
+	{ name = "*/", run = "folder", sync = true },
+	# 代码预览
+	{ mime = "text/*", run = "code" },
+	{ mime = "*/{xml,javascript,wine-extension-ini}", run = "code" },
+	# JSON 预览
+	{ mime = "application/{json,ndjson}", run = "json" },
+	# 图片预览
+	{ mime = "image/{avif,hei?,jxl,svg+xml}", run = "magick" },
+	{ mime = "image/*", run = "image" },
+	# 视频预览
+	{ mime = "video/*", run = "video" },
+	# PDF 预览
+	{ mime = "application/pdf", run = "pdf" },
+	# 压缩包预览
+	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", run = "archive" },
+	{ mime = "application/{debian*-package,redhat-package-manager,rpm,android.package-archive}", run = "archive" },
+	{ name = "*.{AppImage,appimage}", run = "archive" },
+	# 虚拟磁盘/磁盘镜像预览
+	{ mime = "application/{iso9660-image,qemu-disk,ms-wim,apple-diskimage}", run = "archive" },
+	{ mime = "application/virtualbox-{vhd,vhdx}", run = "archive" },
+	{ name = "*.{img,fat,ext,ext2,ext3,ext4,squashfs,ntfs,hfs,hfsx}", run = "archive" },
+	# 字体预览
+	{ mime = "font/*", run = "font" },
+	{ mime = "application/ms-opentype", run = "font" },
+	# 空文件预览
+	{ mime = "inode/empty", run = "empty" },
+	# 其他文件预览
+	{ name = "*", run = "file" },
+]
+
+[input]
+cursor_blink = false  # 光标是否闪烁
+
+# 切换目录
+cd_title  = "切换目录:"
+cd_origin = "top-center"
+cd_offset = [ 0, 2, 50, 3 ]
+
+# 创建文件/目录
+create_title  = [ "创建文件:", "创建目录:" ]
+create_origin = "top-center"
+create_offset = [ 0, 2, 50, 3 ]
+
+# 重命名
+rename_title  = "重命名:"
+rename_origin = "hovered"
+rename_offset = [ 0, 1, 50, 3 ]
+
+# 过滤
+filter_title  = "过滤:"
+filter_origin = "top-center"
+filter_offset = [ 0, 2, 50, 3 ]
+
+# 查找
+find_title  = [ "查找下一个:", "查找上一个:" ]
+find_origin = "top-center"
+find_offset = [ 0, 2, 50, 3 ]
+
+# 搜索
+search_title  = "通过 {n} 搜索:"
+search_origin = "top-center"
+search_offset = [ 0, 2, 50, 3 ]
+
+# 终端
+shell_title  = [ "终端:", "终端 (阻塞):" ]
+shell_origin = "top-center"
+shell_offset = [ 0, 2, 50, 3 ]
+
+[confirm]
+# 移到回收站
+trash_title 	= "确定要将 {n} 个选中的文件移到回收站吗?"
+trash_origin	= "center"
+trash_offset	= [ 0, 0, 70, 20 ]
+
+# 删除
+delete_title 	= "确定要永久删除 {n} 个选中的文件吗?"
+delete_origin	= "center"
+delete_offset	= [ 0, 0, 70, 20 ]
+
+# 覆盖
+overwrite_title   = "确定要覆盖文件吗?"
+overwrite_content = "将覆盖以下文件:"
+overwrite_origin  = "center"
+overwrite_offset  = [ 0, 0, 50, 15 ]
+
+# 退出
+quit_title   = "确定要退出吗?"
+quit_content = "以下任务仍在运行中，确定要退出吗?"
+quit_origin  = "center"
+quit_offset  = [ 0, 0, 50, 15 ]
+
+[pick]
+open_title  = "选择打开方式:"
+open_origin = "hovered"
+open_offset = [ 0, 1, 50, 7 ]
+
+[which]
+sort_by      	 = "none"  # 排序方式：无
+sort_sensitive = false    # 排序是否区分大小写
+sort_reverse 	 = false    # 是否反向排序
+sort_translit  = false    # 是否使用音译排序
