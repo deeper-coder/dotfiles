@@ -168,6 +168,7 @@ alias cc='conda activate'
 alias szsh='source ~/.zshrc'
 
 export EDITOR="nvim"
+export TLDR_LANGUAGE="zh"
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd

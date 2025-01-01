@@ -93,7 +93,7 @@ main() {
     install_tool "fzf" ""
     install_tool "zoxide" ""
     install_tool "bat" ""
-    install_tool "tldr" ""
+    install_tool "tlrc" ""
 
     # 安装字体和主题
     print_message "安装字体和主题..."
