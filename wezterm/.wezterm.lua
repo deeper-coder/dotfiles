@@ -33,7 +33,7 @@ config.initial_rows = 35   -- 初始窗口高度（字符数）
 config.window_decorations = "RESIZE"  -- 窗口装饰样式：只显示调整大小按钮
 
 -- 窗口外观
-config.window_background_opacity = 0.8  -- 窗口背景透明度（0-1）
+config.window_background_opacity = 0.85  -- 窗口背景透明度（0-1）
 config.macos_window_background_blur = 10  -- macOS 窗口背景模糊度
 config.window_close_confirmation = "NeverPrompt"  -- 关闭窗口时不显示确认提示
 

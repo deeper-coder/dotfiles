@@ -94,6 +94,7 @@ main() {
     install_tool "zoxide" ""
     install_tool "bat" ""
     install_tool "tlrc" ""
+    install_tool "bpytop" ""
 
     # 安装字体和主题
     print_message "安装字体和主题..."
