@@ -75,26 +75,26 @@ main() {
 
     # 安装和更新 Homebrew
     print_message "安装和更新 Homebrew 包管理器..."
-    brew update
+    # brew update
 
     # 安装基础 shell 环境
     print_message "安装基础 shell 环境..."
-    install_tool "zsh" ""
-    install_tool "git" ""
-    install_tool "tmux" ""
-    install_tool "lua" ""
+    install_tool "zsh" "zsh"
+    install_tool "git" "git"
+    install_tool "tmux" "tmux"
+    install_tool "lua" "lua"
     install_tool "Wezterm" "--cask wezterm"
 
     # 安装命令行增强工具
     print_message "安装命令行增强工具..."
-    install_tool "eza" ""
-    install_tool "tree" ""
-    install_tool "fd" ""
-    install_tool "fzf" ""
-    install_tool "zoxide" ""
-    install_tool "bat" ""
-    install_tool "tlrc" ""
-    install_tool "bpytop" ""
+    install_tool "eza" "eza"
+    install_tool "tree" "tree"
+    install_tool "fd" "fd"
+    install_tool "fzf" "fzf"
+    install_tool "zoxide" "zoxide"
+    install_tool "bat" "bat"
+    install_tool "tlrc" "tlrc"
+    install_tool "bpytop" "bpytop"
 
     # 安装字体和主题
     print_message "安装字体和主题..."
