@@ -37,7 +37,6 @@ main() {
     export AUTO_INSTALL
     
     print_message "安装浏览器类..."
-    install_tool "Zen 浏览器" "zen-browser"
     install_tool "Arc 浏览器" "arc"
     
     print_message "安装文档工具类..."
@@ -51,17 +50,15 @@ main() {
     print_message "安装系统工具类..."
     install_tool "AltTab" "alt-tab"
     install_tool "Logi Options+" "logi-options+"
-    install_tool "OrbStack" "orbstack"
     install_tool "App Cleaner" "app-cleaner"
     install_tool "Command-X" "command-x"
     install_tool "Mos" "mos"
     install_tool "Itsycal" "itsycal"
     install_tool "Swish" "swish"
-    install_tool "Bartender" "bartender"
+    install_tool "Ice" "ice"
     install_tool "Wins" "wins"
     
     print_message "安装媒体工具类..."
-    install_tool "LyricsX" "brewforge/extras/lyricsx-mxiris"
     install_tool "IINA" "iina"
     install_tool "PictureView" "pictureview"
     

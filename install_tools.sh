@@ -95,11 +95,13 @@ main() {
     install_tool "bat" "bat"
     install_tool "tlrc" "tlrc"
     install_tool "bpytop" "bpytop"
+    install_tool "starship" "starship"
 
     # 安装字体和主题
     print_message "安装字体和主题..."
     brew tap homebrew/cask-fonts
     install_tool "Nerd Font" "--cask font-hack-nerd-font"
+    install_tool "jetbrains-mono-nerd-font" "--cask font-jetbrains-mono-nerd-font"
     print_message "安装 zsh 插件..."
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -120,6 +122,7 @@ main() {
     install_tool "Raycast" "--cask raycast"
     install_tool "Aerospace" "--cask aerospace"
     install_tool "Loop" "--cask loop"
+    install_tool "微信输入法" "--cask wetype"
 
     print_message "所有工具安装完成！"
 }

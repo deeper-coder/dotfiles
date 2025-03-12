@@ -71,10 +71,6 @@ export GOROOT=/opt/homebrew/Cellar/go/1.21.5/libexec
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOBIN:$GOROOT/bin
 
-# RabbitMQ 配置
-export RABBIT_HOME=/opt/homebrew/Cellar/rabbitmq/3.12.12
-export PATH=$PATH:$RABBIT_HOME/sbin
-
 # Conda 环境配置
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -136,7 +132,7 @@ _fzf_comprun() {
 
 # -------------------------- 网络代理配置 --------------------------
 # Socks5 代理
-# export ALL_PROXY=socks5://127.0.0.1:10080
+# export ALL_PROXY=socks5://127.0.0.1:2333
 # HTTP/HTTPS 代理
 # export http_proxy="http://127.0.0.1:10082"
 # export https_proxy="http://127.0.0.1:10081"
