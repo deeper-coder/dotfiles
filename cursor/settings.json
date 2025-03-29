@@ -117,7 +117,7 @@
     // ===== Neovim集成设置 =====
     "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
     "vscode-neovim.neovimClean": false,
-    "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/settings.vim",
+    "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/vscode_neovim/init.lua",
     "vscode-neovim.compositeKeys": {
         "kk": {
             "command": "vscode-neovim.escape"

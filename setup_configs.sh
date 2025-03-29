@@ -43,7 +43,8 @@ main() {
     mkdir -p ~/.config/wezterm
     mkdir -p ~/.config/karabiner
     mkdir -p ~/.tmux
-    mkdir -p ~/.config/aerospace
+    mkdir -p ~/.config/vscode_neovim
+    # mkdir -p ~/.config/aerospace
 
     # 创建配置文件链接
     create_link "$DOTFILES/nvim" ~/.config/nvim
@@ -52,7 +53,8 @@ main() {
     create_link "$DOTFILES/tmux/.tmux.conf" ~/.tmux.conf
     create_link "$DOTFILES/zsh/.zshrc" ~/.zshrc
     create_link "$DOTFILES/ideavim/.ideavimrc" ~/.ideavimrc
-    create_link "$DOTFILES/aerospace/.aerospace.toml" ~/.config/aerospace/aerospace.toml
+    create_link "$DOTFILES/vscode_neovim/init.lua" ~/.config/vscode_neovim/init.lua
+    # create_link "$DOTFILES/aerospace/.aerospace.toml" ~/.config/aerospace/aerospace.toml
 
     # 设置 Yazi 配置
     setup_yazi

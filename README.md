@@ -65,45 +65,38 @@ cd ~/.dotfiles
 
 该脚本会安装以下应用：
 
-#### 浏览器
-- Zen：极简主义浏览器
-- Arc：创新型浏览器
+#### 网络浏览类
+- Arc：现代化浏览器，具有空间管理功能
 
-#### 文档工具
-- Skim：PDF 阅读器
-- QLMarkdown：Markdown 预览
-- Syntax-Highlight：代码预览
-- Notion：知识管理工具
-- EasyDict：翻译工具
-- TextSniper：OCR 文字识别
+#### 文档与阅读类
+- Skim：PDF 阅读器，支持注释
+- QLMarkdown：Markdown 快速预览插件
+- Syntax-Highlight：代码语法高亮预览插件
+- Notion：多功能笔记和知识管理工具
+- EasyDict：快捷翻译工具
+- TextSniper：OCR 文字识别工具
 
-#### 系统工具
-- AltTab：窗口切换增强
-- Logi Options+：罗技设备管理
-- OrbStack：容器管理工具
-- App Cleaner：应用清理工具
-- Command-X：文件操作增强
-- Mos：鼠标平滑滚动
-- Itsycal：菜单栏日历
-- Swish：触控板手势
-- Bartender：菜单栏管理
-- Wins：窗口管理
+#### 系统增强类
+- AltTab：窗口切换增强工具
+- Logi Options+：罗技设备管理软件
+- Command-X：添加剪切功能到 Finder
+- Mos：鼠标滚动平滑工具
+- Itsycal：菜单栏日历工具
+- Swish：触控板手势增强工具
+- Ice：网页应用打包工具
 
-#### 媒体工具
-- LyricsX：歌词显示工具
-- IINA：现代视频播放器
-- PictureView：图片查看器
+#### 多媒体处理类
+- IINA：现代化视频播放器
+- PictureView：图片查看工具
 
-#### 实用工具
-- Keka：压缩解压工具
-- Snipaste：截图工具
-- Cork：Homebrew GUI工具
+#### 实用工具类
+- Keka：文件压缩解压工具
+- Snipaste：截图与贴图工具
 
-#### 社交通讯
-- 微信
-- 飞书
-- 钉钉
-- QQ
+#### 社交通讯类
+- 微信：即时通讯软件
+- 飞书：团队协作平台
+- 钉钉：企业通讯与协作平台
 
 ## 注意事项
 
