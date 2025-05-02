@@ -160,7 +160,7 @@ alias tml='tmux list-sessions'
 alias tmk='tmux kill-session -a'
 alias tmn='tmux new -s'
 alias tmd='tmux detach'
-alias cc='conda activate'
+alias ca='conda activate'
 alias szsh='source ~/.zshrc'
 
 export EDITOR="nvim"

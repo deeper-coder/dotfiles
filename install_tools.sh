@@ -136,6 +136,7 @@ main() {
     # ===== 系统工具 =====
     print_message "安装系统工具..."
     install_tool "Wezterm" "--cask wezterm"                 # GPU 加速终端模拟器
+    install_tool "Warp" "--cask warp"                       # 现代化的终端模拟器
     install_tool "Karabiner-Elements" "--cask karabiner-elements" # 键盘自定义工具
     install_tool "Raycast" "--cask raycast"                 # 启动器和效率工具
     # install_tool "Aerospace" "--cask aerospace"           # 窗口管理器
