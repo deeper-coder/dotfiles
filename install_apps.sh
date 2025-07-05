@@ -70,14 +70,12 @@ main() {
     print_message "安装实用工具类应用..."
     install_tool "Keka" "keka"                    # 文件压缩解压工具
     install_tool "Snipaste" "snipaste"            # 截图与贴图工具
-    # install_tool "Cork" "cork"                  # 桌面便签工具
     
     # ===== 社交通讯类 =====
     print_message "安装社交通讯类应用..."
     install_tool "微信" "wechat"                  # 即时通讯软件
     install_tool "飞书" "feishu"                  # 团队协作平台
     install_tool "钉钉" "dingtalk"                # 企业通讯与协作平台
-    # install_tool "QQ" "qq"                      # 即时通讯软件
 
     print_message "所有应用安装完成！"
 }

@@ -57,7 +57,7 @@ inner.horizontal = 5
 inner.vertical =   5
 outer.left =       0
 outer.bottom =     0
-outer.top =        5
+outer.top =        0
 outer.right =      0
 
 # 'main' 绑定模式声明
@@ -207,6 +207,11 @@ if.app-id = 'com.tencent.xinWeChat'
 if.window-title-regex-substring = '^(?!WeChat \(Chats\)|微信 \(聊天\)).*$'
 run = ['layout floating', 'move-node-to-workspace Social']
 
-exec-on-workspace-change = ['/bin/bash', '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE'
-]
+[[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser'
+if.window-title-regex-substring = 'Little Arc'
+run = 'layout floating'
+
+# exec-on-workspace-change = ['/bin/bash', '-c',
+#     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE'
+# ]

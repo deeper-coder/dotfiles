@@ -52,8 +52,8 @@
     "terminal.integrated.fontSize": 14,
     // 设置终端字体
     "terminal.integrated.fontFamily": "FiraCode Nerd Font",
-    // 设置macOS外部终端为iTerm2
-    "terminal.external.osxExec": "iTerm2.app",
+    // 设置macOS外部终端为WezTerm
+    "terminal.external.osxExec": "WezTerm.app",
     // 禁用终端继承环境变量
     "terminal.integrated.inheritEnv": false,
 
@@ -117,7 +117,7 @@
     // ===== Neovim集成设置 =====
     "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
     "vscode-neovim.neovimClean": false,
-    "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/vscode_neovim/init.lua",
+    "vscode-neovim.neovimInitVimPaths.darwin": "/Users/pluto/Code/dotfiles/vscode_neovim/init.lua",
     "vscode-neovim.compositeKeys": {
         "kk": {
             "command": "vscode-neovim.escape"
