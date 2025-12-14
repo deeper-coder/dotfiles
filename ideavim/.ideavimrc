@@ -171,6 +171,8 @@ let g:WhichKeyDesc_Buffer_CloseEditor = "<leader>bd 关闭当前标签页"
 nmap <leader>bd :action CloseEditor<CR>
 let g:WhichKeyDesc_Buffer_CloseAllEditorsButActive = "<leader>bo 关闭其他标签页"
 nmap <leader>bo :action CloseAllEditorsButActive<CR>
+let g:WhichKeyDesc_Buffer_PinActiveEditorTab = "<leader>bp 固定当前标签页"
+nmap <leader>bp :action PinActiveEditorTab<CR>
 
 " ===================================== C =====================================
 " <leader>c 代码相关操作
