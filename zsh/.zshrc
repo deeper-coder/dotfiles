@@ -8,6 +8,7 @@
 # ══════════════════════════════════════════════════════════════════════════════
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -56,10 +57,10 @@ CASE_SENSITIVE="true"     # 区分大小写补全
 # ZSH_THEME="robbyrussell"
 
 # Powerlevel10k 即时提示配置 (如启用，密码提示等交互代码需放在此块之上)
-#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-#fi
-#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# fi
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # ┌──────────────────────────────────────────────────────────────────────────────┐
 # │ Oh-My-Zsh 插件                                                               │
@@ -284,3 +285,8 @@ function y() {
 
 # 编译标志（用于特定架构编译）
 # export ARCHFLAGS="-arch x86_64"
+
+# Added by Antigravity
+export PATH="/Users/pluto/.antigravity/antigravity/bin:$PATH"
+
+export HOMEBREW_NO_AUTO_UPDATE=1
