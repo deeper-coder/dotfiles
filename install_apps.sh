@@ -70,7 +70,7 @@ main() {
 
     # ===== 菜单栏管理 =====
     print_message "安装菜单栏管理..."
-    install_tool "Ice" "ice"
+    install_tool "Ice" "jordanbaird-ice"
 
     # ===== 系统监控与维护 =====
     print_message "安装系统监控与维护..."
