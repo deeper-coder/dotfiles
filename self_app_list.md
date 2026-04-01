@@ -21,7 +21,6 @@
 - [社交通讯](#-社交通讯)
 - [阅读与学习](#-阅读与学习)
 - [网络代理](#-网络代理)
-- [外设驱动](#-外设驱动)
 - [输入法](#-输入法)
 - [Homebrew 快速安装](#-homebrew-快速安装)
 - [付费应用清单](#-付费应用清单)
@@ -37,7 +36,7 @@
 | Command X | Finder 剪切粘贴 | 🆓 | ✅ |
 | Folder Preview | 文件夹内容预览 | 🆓 | ❌ |
 | Karabiner-Elements | 键盘自定义工具 | 🆓 | ✅ |
-| Mos | 鼠标滚轮平滑 | 🆓 | ✅ |
+| BetterMouse | 鼠标滚轮平滑 | 🆓 | ✅ |
 | QLMarkdown | Markdown 快速预览 | 🆓 | ✅ |
 | Syntax Highlight | 代码语法高亮预览 | 🆓 | ✅ |
 | 右键助手专业版 | 右键菜单增强 | 💰 | ❌ |
@@ -64,7 +63,6 @@
 | OpenInTerminal | Finder 快开终端 | 🆓 | ✅ |
 | PopClip | 选中文本操作菜单 | 💰 | ✅ |
 | Raycast | 现代启动器 | 🆓 | ✅ |
-| TextScanner | OCR 文字识别 | 💰 | ❌ |
 
 ---
 
@@ -119,10 +117,9 @@
 
 | 应用 | 简介 | 价格 | Brew |
 |------|------|:----:|:----:|
-| Cursor | AI 代码编辑器 | 🆓 | ✅ |
+| Antigravity | AI 代码编辑器 | 🆓 | ✅ |
 | OrbStack | 轻量 Docker 虚拟机 | 🆓 | ✅ |
 | Warp | 现代化终端 | 🆓 | ✅ |
-| YCursor | Cursor 额度管理 | 🆓 | ❌ |
 | Zed | 高性能编辑器 | 🆓 | ✅ |
 
 ---
@@ -163,6 +160,7 @@
 | 飞书 | 协作办公平台 | 🆓 | ✅ |
 | 腾讯会议 | 视频会议工具 | 🆓 | ✅ |
 | 微信 | 即时通讯工具 | 🆓 | ✅ |
+| vivo 办公套件 | vivo 设备互联 | 🆓 | ❌ |
 
 ---
 
@@ -182,15 +180,6 @@
 | 应用 | 简介 | 价格 | Brew |
 |------|------|:----:|:----:|
 | Shadowrocket | 网络代理工具 | 💰 | ❌ |
-
----
-
-## 🔌 外设驱动
-
-| 应用 | 简介 | 价格 | Brew |
-|------|------|:----:|:----:|
-| Logi Options+ | 罗技外设管理 | 🆓 | ✅ |
-| vivo 办公套件 | vivo 设备互联 | 🆓 | ❌ |
 
 ---
 
@@ -214,7 +203,7 @@
 
 ```bash
 # 系统增强
-brew install --cask alt-tab betterdisplay command-x karabiner-elements mos qlmarkdown syntax-highlight
+brew install --cask alt-tab betterdisplay command-x karabiner-elements bettermouse qlmarkdown syntax-highlight
 
 # 窗口管理
 brew install --cask loop
@@ -229,7 +218,7 @@ brew install --cask keka
 brew install --cask macs-fan-control stats
 
 # 开发工具
-brew install --cask cursor orbstack warp zed
+brew install --cask antigravity orbstack warp zed
 
 # 浏览器
 brew install --cask arc orion zen-browser
@@ -244,8 +233,6 @@ brew install --cask dingtalk feishu tencent-meeting wechat
 # 阅读
 brew install --cask skim zotero
 
-# 外设驱动
-brew install --cask logi-options-plus
 
 # 输入法
 brew install --cask wetype
@@ -257,7 +244,7 @@ brew install --cask chatgpt
 ### 完整一行命令
 
 ```bash
-brew install --cask alt-tab betterdisplay command-x karabiner-elements mos qlmarkdown syntax-highlight loop bitwarden itsycal openinterminal raycast keka macs-fan-control stats cursor orbstack warp zed arc orion zen-browser iina pictureview dingtalk feishu tencent-meeting wechat skim zotero logi-options-plus wetype chatgpt
+brew install --cask alt-tab betterdisplay command-x karabiner-elements bettermouse qlmarkdown syntax-highlight loop bitwarden itsycal openinterminal raycast keka macs-fan-control stats antigravity orbstack warp zed arc orion zen-browser iina pictureview dingtalk feishu tencent-meeting wechat skim zotero wetype chatgpt
 brew install pear-devs/pear-desktop
 ```
 
@@ -283,7 +270,6 @@ brew install pear-devs/pear-desktop
 |------|------|----------|
 | Dropover | 拖放暂存架 | App Store |
 | PopClip | 选中文本操作菜单 | App Store |
-| TextScanner | OCR 文字识别 | App Store |
 
 ### 文件管理
 | 应用 | 简介 | 购买渠道 |

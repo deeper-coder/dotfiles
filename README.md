@@ -147,12 +147,12 @@ cd ~/.dotfiles
 | Itsycal | `itsycal` | 菜单栏日历 |
 | OpenInTerminal | `openinterminal` | Finder 快开终端 |
 | Raycast | `raycast` | 现代启动器 |
-| TextSniper | `textsniper` | OCR 文字识别 |
 
 #### 文件管理
 
 | 应用 | Brew 包名 | 简介 |
 |------|-----------|------|
+| PearCleaner | `pearcleaner` | 应用卸载清理 |
 | Keka | `keka` | 压缩解压工具 |
 
 #### 截图与录屏
@@ -178,7 +178,7 @@ cd ~/.dotfiles
 
 | 应用 | Brew 包名 | 简介 |
 |------|-----------|------|
-| Cursor | `cursor` | AI 代码编辑器 |
+| Antigravity | `antigravity` | AI 代码编辑器 |
 | Warp | `warp` | 现代化终端 |
 
 #### 浏览器
@@ -227,7 +227,7 @@ cd ~/.dotfiles
 | Command X | Finder 剪切粘贴 | 🆓 | ✅ |
 | Folder Preview | 文件夹内容预览 | 🆓 | ❌ |
 | Karabiner-Elements | 键盘自定义工具 | 🆓 | ✅ |
-| Mos | 鼠标滚轮平滑 | 🆓 | ✅ |
+| BetterMouse | 鼠标滚轮平滑 | 🆓 | ✅ |
 | QLMarkdown | Markdown 快速预览 | 🆓 | ✅ |
 | Syntax Highlight | 代码语法高亮预览 | 🆓 | ✅ |
 | 右键助手专业版 | 右键菜单增强 | 💰 | ❌ |
@@ -250,7 +250,6 @@ cd ~/.dotfiles
 | OpenInTerminal | Finder 快开终端 | 🆓 | ✅ |
 | PopClip | 选中文本操作菜单 | 💰 | ✅ |
 | Raycast | 现代启动器 | 🆓 | ✅ |
-| TextScanner | OCR 文字识别 | 💰 | ❌ |
 
 #### 🤖 AI 助手
 
@@ -293,10 +292,9 @@ cd ~/.dotfiles
 
 | 应用 | 简介 | 价格 | Brew |
 |------|------|:----:|:----:|
-| Cursor | AI 代码编辑器 | 🆓 | ✅ |
+| Antigravity | AI 代码编辑器 | 🆓 | ✅ |
 | OrbStack | 轻量 Docker 虚拟机 | 🆓 | ✅ |
 | Warp | 现代化终端 | 🆓 | ✅ |
-| YCursor | Cursor 额度管理 | 🆓 | ❌ |
 | Zed | 高性能编辑器 | 🆓 | ✅ |
 
 #### 🌐 浏览器
@@ -329,6 +327,7 @@ cd ~/.dotfiles
 | 飞书 | 协作办公平台 | 🆓 | ✅ |
 | 腾讯会议 | 视频会议工具 | 🆓 | ✅ |
 | 微信 | 即时通讯工具 | 🆓 | ✅ |
+| vivo 办公套件 | vivo 设备互联 | 🆓 | ❌ |
 
 #### 📚 阅读与学习
 
@@ -344,13 +343,6 @@ cd ~/.dotfiles
 | 应用 | 简介 | 价格 | Brew |
 |------|------|:----:|:----:|
 | Shadowrocket | 网络代理工具 | 💰 | ❌ |
-
-#### 🔌 外设驱动
-
-| 应用 | 简介 | 价格 | Brew |
-|------|------|:----:|:----:|
-| Logi Options+ | 罗技外设管理 | 🆓 | ✅ |
-| vivo 办公套件 | vivo 设备互联 | 🆓 | ❌ |
 
 #### ⌨️ 输入法
 
@@ -372,7 +364,7 @@ cd ~/.dotfiles
 
 ```bash
 # 系统增强
-brew install --cask alt-tab betterdisplay command-x karabiner-elements mos qlmarkdown syntax-highlight
+brew install --cask alt-tab betterdisplay command-x karabiner-elements bettermouse qlmarkdown syntax-highlight
 
 # 窗口管理
 brew install --cask loop
@@ -387,13 +379,14 @@ brew install --cask keka
 brew install --cask macs-fan-control stats
 
 # 开发工具
-brew install --cask cursor orbstack warp zed
+brew install --cask antigravity orbstack warp zed
 
 # 浏览器
 brew install --cask arc orion zen-browser
 
 # 多媒体
 brew install --cask iina pictureview
+brew install pear-devs/pear-desktop
 
 # 社交通讯
 brew install --cask dingtalk feishu tencent-meeting wechat
@@ -401,8 +394,6 @@ brew install --cask dingtalk feishu tencent-meeting wechat
 # 阅读
 brew install --cask skim zotero
 
-# 外设驱动
-brew install --cask logi-options-plus
 
 # 输入法
 brew install --cask wetype
@@ -414,7 +405,8 @@ brew install --cask chatgpt
 ### 完整一行命令
 
 ```bash
-brew install --cask alt-tab betterdisplay command-x karabiner-elements mos qlmarkdown syntax-highlight loop bitwarden itsycal openinterminal raycast keka macs-fan-control stats cursor orbstack warp zed arc orion zen-browser iina pictureview dingtalk feishu tencent-meeting wechat skim zotero logi-options-plus wetype chatgpt
+brew install --cask alt-tab betterdisplay command-x karabiner-elements bettermouse qlmarkdown syntax-highlight loop bitwarden itsycal openinterminal raycast keka macs-fan-control stats antigravity orbstack warp zed arc orion zen-browser iina pictureview dingtalk feishu tencent-meeting wechat skim zotero wetype chatgpt
+brew install pear-devs/pear-desktop
 ```
 
 ---
@@ -430,7 +422,6 @@ brew install --cask alt-tab betterdisplay command-x karabiner-elements mos qlmar
 | 窗口管理 | Wins | 现代窗口管理工具 | App Store / Brew |
 | 效率工具 | Dropover | 拖放暂存架 | App Store |
 | 效率工具 | PopClip | 选中文本操作菜单 | App Store |
-| 效率工具 | TextScanner | OCR 文字识别 | App Store |
 | 文件管理 | App Cleaner & Uninstaller | 应用卸载清理 | 官网 / App Store |
 | 文件管理 | 文件夹夹 | 快速访问文件夹 | App Store |
 | 截图与录屏 | iShot Pro | 专业截图录屏工具 | App Store |

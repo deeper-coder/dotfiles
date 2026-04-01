@@ -58,11 +58,10 @@ main() {
     install_tool "Itsycal" "itsycal"
     install_tool "OpenInTerminal" "openinterminal"
     install_tool "Raycast" "raycast"
-    install_tool "TextSniper" "textsniper"
 
     # ===== 文件管理 =====
     print_message "安装文件管理..."
-    # install_tool "App Cleaner" "app-cleaner"
+    install_tool "PearCleaner" "pearcleaner"
     install_tool "Keka" "keka"
 
     # ===== 截图与录屏 =====
@@ -80,7 +79,7 @@ main() {
 
     # ===== 开发工具 =====
     print_message "安装开发工具..."
-    install_tool "Cursor" "cursor"
+    install_tool "Antigravity" "antigravity"
     install_tool "Warp" "warp"
     # install_tool "Wezterm" "wezterm"
 
