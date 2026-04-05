@@ -51,7 +51,7 @@
     // 设置终端字体大小
     "terminal.integrated.fontSize": 14,
     // 设置终端字体
-    "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+    "terminal.integrated.fontFamily": "JetBrains Mono Nerd Font",
     // 设置macOS外部终端为WezTerm
     "terminal.external.osxExec": "WezTerm.app",
     // 禁用终端继承环境变量
@@ -117,7 +117,7 @@
     // ===== Neovim集成设置 =====
     "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
     "vscode-neovim.neovimClean": false,
-    "vscode-neovim.neovimInitVimPaths.darwin": "/Users/pluto/Code/dotfiles/vscode_neovim/init.lua",
+    "vscode-neovim.neovimInitVimPaths.darwin": "~/.dotfiles/vscode/vscode_neovim/init.lua",
     "vscode-neovim.compositeKeys": {
         "kk": {
             "command": "vscode-neovim.escape"

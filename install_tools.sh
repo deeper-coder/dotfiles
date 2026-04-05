@@ -113,7 +113,6 @@ main() {
 
     # ===== 字体和主题 =====
     print_message "安装字体和主题..."
-    # brew tap homebrew/cask-fonts
     install_tool "Hack Nerd Font" "--cask font-hack-nerd-font"
     install_tool "JetBrains Mono Nerd Font" "--cask font-jetbrains-mono-nerd-font"
     install_tool "starship" "starship"

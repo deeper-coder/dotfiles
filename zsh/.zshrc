@@ -10,6 +10,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+export HOMEBREW_NO_AUTO_UPDATE=1export PATH="$HOME/.local/bin:$PATH"
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ▶ ZSH 核心配置
@@ -191,14 +193,6 @@ eval "$(starship init zsh)"
 export EDITOR="nvim"
 
 # ══════════════════════════════════════════════════════════════════════════════
-# ▶ API 密钥配置
-# ══════════════════════════════════════════════════════════════════════════════
-export AZURE_OPENAI_API_KEY="03f007c22d6c4583829e8e0b89035765"
-export ALIYUN_API_KEY="sk-428846394b8544e89897118166ecfc10"
-export DS_API_KEY="sk-efb71960d6d84c3980a7c6085c9edea6"
-export DASHSCOPE_API_KEY="sk-428846394b8544e89897118166ecfc10"
-
-# ══════════════════════════════════════════════════════════════════════════════
 # ▶ 网络代理配置（按需启用）
 # ══════════════════════════════════════════════════════════════════════════════
 # Socks5 代理
@@ -285,8 +279,3 @@ function y() {
 
 # 编译标志（用于特定架构编译）
 # export ARCHFLAGS="-arch x86_64"
-
-# Added by Antigravity
-export PATH="/Users/pluto/.antigravity/antigravity/bin:$PATH"
-
-export HOMEBREW_NO_AUTO_UPDATE=1

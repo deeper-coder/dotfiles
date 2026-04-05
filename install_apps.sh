@@ -81,11 +81,12 @@ main() {
     print_message "安装开发工具..."
     install_tool "Antigravity" "antigravity"
     install_tool "Warp" "warp"
-    # install_tool "Wezterm" "wezterm"
+    install_tool "Wezterm" "wezterm"
 
     # ===== 浏览器 =====
     print_message "安装浏览器..."
     install_tool "Arc" "arc"
+    install_tool "Zen" "zen"
 
     # ===== 多媒体 =====
     print_message "安装多媒体..."
@@ -102,14 +103,6 @@ main() {
     print_message "安装阅读与学习..."
     install_tool "Skim" "skim"
     # install_tool "Zotero" "zotero"
-
-    # ===== 外设驱动 =====
-    print_message "安装外设驱动..."
-    install_tool "Logi Options+" "logi-options-plus"
-
-    # ===== 输入法 =====
-    print_message "安装输入法..."
-    install_tool "微信输入法" "wetype"
 
     print_message "所有应用安装完成！"
 }

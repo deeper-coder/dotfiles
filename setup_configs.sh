@@ -40,7 +40,7 @@ main() {
 
     # 创建必要的配置目录
     mkdir -p ~/.config/nvim
-    # mkdir -p ~/.config/wezterm
+    mkdir -p ~/.config/wezterm
     mkdir -p ~/.config/karabiner
     mkdir -p ~/.tmux
     mkdir -p ~/.config/vscode_neovim
@@ -48,12 +48,12 @@ main() {
 
     # 创建配置文件链接
     create_link "$DOTFILES/nvim" ~/.config/nvim
-    # create_link "$DOTFILES/wezterm/.wezterm.lua" ~/.wezterm.lua
+    create_link "$DOTFILES/wezterm/.wezterm.lua" ~/.wezterm.lua
     create_link "$DOTFILES/karabiner/karabiner.json" ~/.config/karabiner/karabiner.json
     create_link "$DOTFILES/tmux/.tmux.conf" ~/.tmux.conf
     create_link "$DOTFILES/zsh/.zshrc" ~/.zshrc
     create_link "$DOTFILES/ideavim/.ideavimrc" ~/.ideavimrc
-    create_link "$DOTFILES/vscode_neovim/init.lua" ~/.config/vscode_neovim/init.lua
+    create_link "$DOTFILES/vscode/vscode_neovim/init.lua" ~/.config/vscode_neovim/init.lua
     # create_link "$DOTFILES/aerospace/.aerospace.toml" ~/.config/aerospace/aerospace.toml
 
     # 设置 Yazi 配置

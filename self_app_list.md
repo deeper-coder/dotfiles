@@ -183,14 +183,6 @@
 
 ---
 
-## ⌨️ 输入法
-
-| 应用 | 简介 | 价格 | Brew |
-|------|------|:----:|:----:|
-| 微信输入法 | 智能输入法 | 🆓 | ✅ |
-
----
-
 ## 🚀 Homebrew 快速安装
 
 ### 安装 Homebrew
@@ -233,10 +225,6 @@ brew install --cask dingtalk feishu tencent-meeting wechat
 # 阅读
 brew install --cask skim zotero
 
-
-# 输入法
-brew install --cask wetype
-
 # AI 助手
 brew install --cask chatgpt
 ```
@@ -244,7 +232,7 @@ brew install --cask chatgpt
 ### 完整一行命令
 
 ```bash
-brew install --cask alt-tab betterdisplay command-x karabiner-elements bettermouse qlmarkdown syntax-highlight loop bitwarden itsycal openinterminal raycast keka macs-fan-control stats antigravity orbstack warp zed arc orion zen-browser iina pictureview dingtalk feishu tencent-meeting wechat skim zotero wetype chatgpt
+brew install --cask alt-tab betterdisplay command-x karabiner-elements bettermouse qlmarkdown syntax-highlight loop bitwarden itsycal openinterminal raycast keka macs-fan-control stats antigravity orbstack warp zed arc orion zen-browser iina pictureview dingtalk feishu tencent-meeting wechat skim zotero chatgpt
 brew install pear-devs/pear-desktop
 ```
 

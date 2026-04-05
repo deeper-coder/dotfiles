@@ -8,11 +8,11 @@
 
 - [快速开始](#-快速开始)
 - [工具安装](#-工具安装)
-- [配置文件](#-配置文件)
 - [应用安装](#-应用安装)
   - [公司电脑模式](#公司电脑模式)
   - [个人电脑模式](#个人电脑模式)
 - [应用清单](#-应用清单)
+- [配置文件](#-配置文件)
 - [注意事项](#-注意事项)
 
 ---
@@ -32,11 +32,11 @@ cd ~/.dotfiles
 # Step 1: 安装基础开发工具（通用）
 ./install_tools.sh
 
-# Step 2: 创建配置文件链接
-./setup_configs.sh
-
-# Step 3: 安装应用程序（根据需求选择）
+# Step 2: 安装应用程序（根据需求选择）
 ./install_apps.sh  # 公司电脑模式
+
+# Step 3: 创建配置文件链接
+./setup_configs.sh
 ```
 
 ---
@@ -96,24 +96,6 @@ cd ~/.dotfiles
 | 工具 | 简介 |
 |------|------|
 | LazyVim | 现代化的 Neovim 配置框架 |
-
----
-
-## ⚙️ 配置文件
-
-运行 `./setup_configs.sh` 会创建以下配置文件的符号链接：
-
-| 配置 | 源文件 | 目标位置 |
-|------|--------|----------|
-| Neovim | `nvim/` | `~/.config/nvim` |
-| Karabiner | `karabiner/karabiner.json` | `~/.config/karabiner/karabiner.json` |
-| Tmux | `tmux/.tmux.conf` | `~/.tmux.conf` |
-| Zsh | `zsh/.zshrc` | `~/.zshrc` |
-| IdeaVim | `ideavim/.ideavimrc` | `~/.ideavimrc` |
-| VSCode Neovim | `vscode_neovim/init.lua` | `~/.config/vscode_neovim/init.lua` |
-| Yazi | `yazi/*.toml` | `~/.config/yazi/*.toml` |
-
-> 💡 原有配置文件会自动备份为 `*.backup`
 
 ---
 
@@ -185,7 +167,8 @@ cd ~/.dotfiles
 
 | 应用 | Brew 包名 | 简介 |
 |------|-----------|------|
-| Arc | `arc` | 革新性浏览器 |
+| Arc | `arc` | Chromium系浏览器 |
+| Zen | `zen` | Firefox系浏览器 |
 
 #### 多媒体
 
@@ -199,18 +182,6 @@ cd ~/.dotfiles
 | 应用 | Brew 包名 | 简介 |
 |------|-----------|------|
 | Skim | `skim` | 轻量 PDF 阅读器 |
-
-#### 外设驱动
-
-| 应用 | Brew 包名 | 简介 |
-|------|-----------|------|
-| Logi Options+ | `logi-options-plus` | 罗技外设管理 |
-
-#### 输入法
-
-| 应用 | Brew 包名 | 简介 |
-|------|-----------|------|
-| 微信输入法 | `wetype` | 智能输入法 |
 
 ---
 
@@ -344,12 +315,6 @@ cd ~/.dotfiles
 |------|------|:----:|:----:|
 | Shadowrocket | 网络代理工具 | 💰 | ❌ |
 
-#### ⌨️ 输入法
-
-| 应用 | 简介 | 价格 | Brew |
-|------|------|:----:|:----:|
-| 微信输入法 | 智能输入法 | 🆓 | ✅ |
-
 ---
 
 ## 🚀 Homebrew 快速安装
@@ -394,10 +359,6 @@ brew install --cask dingtalk feishu tencent-meeting wechat
 # 阅读
 brew install --cask skim zotero
 
-
-# 输入法
-brew install --cask wetype
-
 # AI 助手
 brew install --cask chatgpt
 ```
@@ -405,7 +366,7 @@ brew install --cask chatgpt
 ### 完整一行命令
 
 ```bash
-brew install --cask alt-tab betterdisplay command-x karabiner-elements bettermouse qlmarkdown syntax-highlight loop bitwarden itsycal openinterminal raycast keka macs-fan-control stats antigravity orbstack warp zed arc orion zen-browser iina pictureview dingtalk feishu tencent-meeting wechat skim zotero wetype chatgpt
+brew install --cask alt-tab betterdisplay command-x karabiner-elements bettermouse qlmarkdown syntax-highlight loop bitwarden itsycal openinterminal raycast keka macs-fan-control stats antigravity orbstack warp zed arc orion zen-browser iina pictureview dingtalk feishu tencent-meeting wechat skim zotero chatgpt
 brew install pear-devs/pear-desktop
 ```
 
@@ -434,9 +395,27 @@ brew install pear-devs/pear-desktop
 
 ---
 
+## ⚙️ 配置文件
+
+运行 `./setup_configs.sh` 会创建以下配置文件的符号链接：
+
+| 配置 | 源文件 | 目标位置 |
+|------|--------|----------|
+| Neovim | `nvim/` | `~/.config/nvim` |
+| Karabiner | `karabiner/karabiner.json` | `~/.config/karabiner/karabiner.json` |
+| Tmux | `tmux/.tmux.conf` | `~/.tmux.conf` |
+| Zsh | `zsh/.zshrc` | `~/.zshrc` |
+| IdeaVim | `ideavim/.ideavimrc` | `~/.ideavimrc` |
+| VSCode Neovim | `vscode/vscode_neovim/init.lua` | `~/.config/vscode_neovim/init.lua` |
+| Yazi | `yazi/*.toml` | `~/.config/yazi/*.toml` |
+
+> 💡 原有配置文件会自动备份为 `*.backup`
+
+---
+
 ## ⚠️ 注意事项
 
-1. **按顺序执行**：建议按照 `install_tools.sh` → `setup_configs.sh` → `install_apps.sh` 的顺序执行
+1. **按顺序执行**：建议按照 `install_tools.sh` → `install_apps.sh` → `setup_configs.sh`  的顺序执行
 2. **选择性安装**：每个脚本都支持交互式选择，可以根据需要选择要安装的工具
 3. **自动备份**：配置文件会自动备份原有的配置为 `*.backup`
 4. **重启终端**：完成安装后请重启终端以使配置生效
