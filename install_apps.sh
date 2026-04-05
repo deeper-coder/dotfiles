@@ -80,6 +80,7 @@ main() {
     # ===== 开发工具 =====
     print_message "安装开发工具..."
     install_tool "Antigravity" "antigravity"
+    install_tool "Ghostty" "ghostty"
     install_tool "Warp" "warp"
     install_tool "Wezterm" "wezterm"
 

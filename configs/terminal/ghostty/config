@@ -1,4 +1,5 @@
 font-family = MesloLGS NF
+theme = atom
 font-size = 14
 
 keybind = global:cmd+grave_accent=toggle_quick_terminal

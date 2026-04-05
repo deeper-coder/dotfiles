@@ -20,7 +20,6 @@
     "editor.accessibilitySupport": "off",
     // 开启Unicode字符高亮
     "editor.unicodeHighlight.ambiguousCharacters": true,
-
     // ===== 工作区主题和外观 =====
     // 设置颜色主题
     "workbench.colorTheme": "Default Dark Modern",
@@ -34,7 +33,6 @@
     "TransparentMinimap.minimapColor": "111111",
     // 设置非焦点窗口的不透明度
     "accessibility.dimUnfocused.opacity": 0.8,
-
     // ===== 编辑器行为设置 =====
     // 设置默认格式化工具为black
     "editor.defaultFormatter": "ms-python.black-formatter",
@@ -46,7 +44,6 @@
     "files.autoSave": "onFocusChange",
     // 禁用符号链接搜索
     "search.followSymlinks": false,
-
     // ===== 终端设置 =====
     // 设置终端字体大小
     "terminal.integrated.fontSize": 14,
@@ -56,7 +53,6 @@
     "terminal.external.osxExec": "WezTerm.app",
     // 禁用终端继承环境变量
     "terminal.integrated.inheritEnv": false,
-
     // ===== 语言相关设置 =====
     // Python相关设置
     "[python]": {
@@ -76,7 +72,6 @@
     "python.analysis.inlayHints.callArgumentNames": "partial",
     "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.typeCheckingMode": "basic",
-
     // C/C++相关设置
     "[cpp]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
@@ -95,35 +90,30 @@
     "clang.cxxflags": [
         "-std=c++17"
     ],
-
     // Markdown相关设置
     "[markdown]": {
         "editor.defaultFormatter": "mervin.markdown-formatter"
     },
-
     // ===== 开发工具设置 =====
     // 竞赛编程相关设置
     "cph.language.cpp.Args": "-std=c++17 -w -O2",
     "cph.language.cpp.SubmissionCompiler": "GNU G++20 13.2 (64 bit, winlibs)",
     "cph.general.timeOut": 2000,
     "cph.language.cpp.Command": "clang++",
-
     // 代码运行器设置
     "code-runner.clearPreviousOutput": true,
     "code-runner.runInTerminal": true,
     "code-runner.saveFileBeforeRun": true,
     "code-runner.fileDirectoryAsCwd": true,
-
     // ===== Neovim集成设置 =====
     "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
     "vscode-neovim.neovimClean": false,
-    "vscode-neovim.neovimInitVimPaths.darwin": "~/.dotfiles/vscode/vscode_neovim/init.lua",
+    "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/vscode_neovim/init.lua",
     "vscode-neovim.compositeKeys": {
         "kk": {
             "command": "vscode-neovim.escape"
         }
     },
-
     // ===== WhichKey快捷键设置 =====
     // 按字母顺序排序
     "whichkey.sortOrder": "alphabetically",
@@ -409,7 +399,7 @@
                     "command": "workbench.action.closeEditorsInGroup"
                 },
                 {
-                   "key": "x",
+                    "key": "x",
                     "name": "关闭所有编辑器组",
                     "type": "command",
                     "command": "workbench.action.closeAllGroups"
@@ -423,7 +413,6 @@
             "command": "workbench.action.toggleZenMode"
         }
     ],
-
     // ===== 文件和安全设置 =====
     // 设置要在文件浏览器中隐藏的文件和文件夹
     "files.exclude": {
@@ -437,7 +426,6 @@
     "security.workspace.trust.untrustedFiles": "open",
     // 禁用本地文件协议处理提示
     "security.promptForLocalFileProtocolHandling": false,
-
     // ===== 其他设置 =====
     // 设置扩展亲和性
     "extensions.experimental.affinity": {
@@ -448,4 +436,4 @@
     "git.openRepositoryInParentFolders": "never",
     // Cursor设置
     "cursor.chat.alwaysSearchWeb": true
-  }
+}

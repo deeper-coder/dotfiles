@@ -9,7 +9,7 @@ if vim.g.vscode then
 
     -- 窗口管理快捷键
     local function vscode_cmd(cmd)
-        return function() require('vscode-neovim').call(cmd) end
+        return function() require('vscode').call(cmd) end
     end
 
     map('n', '<C-j>', vscode_cmd('workbench.action.navigateDown'))

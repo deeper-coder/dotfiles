@@ -113,11 +113,12 @@
 
 ---
 
-## 💻 开发工具
+#### 💻 开发工具
 
 | 应用 | 简介 | 价格 | Brew |
 |------|------|:----:|:----:|
 | Antigravity | AI 代码编辑器 | 🆓 | ✅ |
+| Ghostty | 高性能终端模拟器 | 🆓 | ✅ |
 | OrbStack | 轻量 Docker 虚拟机 | 🆓 | ✅ |
 | Warp | 现代化终端 | 🆓 | ✅ |
 | Zed | 高性能编辑器 | 🆓 | ✅ |
@@ -210,7 +211,7 @@ brew install --cask keka
 brew install --cask macs-fan-control stats
 
 # 开发工具
-brew install --cask antigravity orbstack warp zed
+brew install --cask antigravity ghostty orbstack warp zed
 
 # 浏览器
 brew install --cask arc orion zen-browser
@@ -232,7 +233,7 @@ brew install --cask chatgpt
 ### 完整一行命令
 
 ```bash
-brew install --cask alt-tab betterdisplay command-x karabiner-elements bettermouse qlmarkdown syntax-highlight loop bitwarden itsycal openinterminal raycast keka macs-fan-control stats antigravity orbstack warp zed arc orion zen-browser iina pictureview dingtalk feishu tencent-meeting wechat skim zotero chatgpt
+brew install --cask alt-tab betterdisplay command-x karabiner-elements bettermouse qlmarkdown syntax-highlight loop bitwarden itsycal openinterminal raycast keka macs-fan-control stats antigravity ghostty orbstack warp zed arc orion zen-browser iina pictureview dingtalk feishu tencent-meeting wechat skim zotero chatgpt
 brew install pear-devs/pear-desktop
 ```
 
