@@ -11,7 +11,8 @@ export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
-export HOMEBREW_NO_AUTO_UPDATE=1export PATH="$HOME/.local/bin:$PATH"
+export HOMEBREW_NO_AUTO_UPDATE=1
+export PATH="$HOME/.local/bin:$PATH"
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ▶ ZSH 核心配置
@@ -81,43 +82,19 @@ source $ZSH/oh-my-zsh.sh
 # ══════════════════════════════════════════════════════════════════════════════
 
 # ┌──────────────────────────────────────────────────────────────────────────────┐
-# │ Java / JDK 配置                                                              │
-# │ 支持多版本 JDK 切换，使用别名快速切换                                           │
-# └──────────────────────────────────────────────────────────────────────────────┘
-export JAVA_17_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
-export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home
-export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/zulu-8-arm64.jdk/Contents/Home
-export JAVA_8_x64_HOME=/Library/Java/JavaVirtualMachines/zulu-8-x64.jdk/Contents/Home
-export JAVA_HOME=$JAVA_17_HOME
-export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
-
-# JDK 版本切换别名
-alias jdk17="export JAVA_HOME=$JAVA_17_HOME"
-alias jdk11="export JAVA_HOME=$JAVA_11_HOME"
-alias jdk8="export JAVA_HOME=$JAVA_8_HOME"
-alias jdk8_64="export JAVA_HOME=$JAVA_8_x64_HOME"
-
-# ┌──────────────────────────────────────────────────────────────────────────────┐
-# │ Golang 配置                                                                  │
-# └──────────────────────────────────────────────────────────────────────────────┘
-export GOROOT=/opt/homebrew/Cellar/go/1.21.5/libexec
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOBIN:$GOROOT/bin
-
-# ┌──────────────────────────────────────────────────────────────────────────────┐
 # │ Conda 配置                                                                   │
 # │ Python 虚拟环境管理器                                                         │
 # └──────────────────────────────────────────────────────────────────────────────┘
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/pluto/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$("$HOME/miniconda3/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/pluto/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/pluto/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/pluto/miniconda3/bin:$PATH"
+        export PATH="$HOME/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -191,15 +168,6 @@ eval "$(starship init zsh)"
 # ▶ 编辑器配置
 # ══════════════════════════════════════════════════════════════════════════════
 export EDITOR="nvim"
-
-# ══════════════════════════════════════════════════════════════════════════════
-# ▶ 网络代理配置（按需启用）
-# ══════════════════════════════════════════════════════════════════════════════
-# Socks5 代理
-# export ALL_PROXY=socks5://127.0.0.1:2333
-# HTTP/HTTPS 代理
-# export http_proxy="http://127.0.0.1:10082"
-# export https_proxy="http://127.0.0.1:10081"
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ▶ 命令别名
@@ -282,3 +250,57 @@ function y() {
 
 # 编译标志（用于特定架构编译）
 # export ARCHFLAGS="-arch x86_64"
+
+# ══════════════════════════════════════════════════════════════════════════════
+# ▶ 网络代理配置
+# ══════════════════════════════════════════════════════════════════════════════
+# 提供快捷函数，方便快速开启/关闭代理
+# proxy_on：开启代理
+# proxy_off：关闭代理
+proxy_on() {
+    export all_proxy="socks5://127.0.0.1:2333"
+    export ALL_PROXY="socks5://127.0.0.1:2333"
+    export http_proxy="http://127.0.0.1:10082"
+    export HTTP_PROXY="http://127.0.0.1:10082"
+    export https_proxy="http://127.0.0.1:10081"
+    export HTTPS_PROXY="http://127.0.0.1:10081"
+    echo -e "\033[32m[√] 代理已开启 (Proxy Enabled)\033[0m"
+    echo "    ALL_PROXY   = $ALL_PROXY"
+    echo "    HTTP_PROXY  = $HTTP_PROXY"
+    echo "    HTTPS_PROXY = $HTTPS_PROXY"
+}
+
+proxy_off() {
+    unset all_proxy ALL_PROXY
+    unset http_proxy HTTP_PROXY
+    unset https_proxy HTTPS_PROXY
+    echo -e "\033[31m[x] 代理已关闭 (Proxy Disabled)\033[0m"
+}
+
+# ══════════════════════════════════════════════════════════════════════════════
+# ▶ 本地历史环境参考（已归档/注释）
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ┌──────────────────────────────────────────────────────────────────────────────┐
+# │ Java / JDK 配置                                                              │
+# │ 支持多版本 JDK 切换，使用别名快速切换                                           │
+# └──────────────────────────────────────────────────────────────────────────────┘
+# export JAVA_17_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+# export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home
+# export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/zulu-8-arm64.jdk/Contents/Home
+# export JAVA_8_x64_HOME=/Library/Java/JavaVirtualMachines/zulu-8-x64.jdk/Contents/Home
+# export JAVA_HOME=$JAVA_17_HOME
+# export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
+# 
+# # JDK 版本切换别名
+# alias jdk17="export JAVA_HOME=$JAVA_17_HOME"
+# alias jdk11="export JAVA_HOME=$JAVA_11_HOME"
+# alias jdk8="export JAVA_HOME=$JAVA_8_HOME"
+# alias jdk8_64="export JAVA_HOME=$JAVA_8_x64_HOME"
+
+# ┌──────────────────────────────────────────────────────────────────────────────┐
+# │ Golang 配置                                                                  │
+# └──────────────────────────────────────────────────────────────────────────────┘
+# export GOROOT=/opt/homebrew/Cellar/go/1.21.5/libexec
+# export GOPATH=$HOME/go
+# export PATH=$PATH:$GOBIN:$GOROOT/bin
