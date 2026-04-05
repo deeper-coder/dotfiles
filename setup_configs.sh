@@ -28,9 +28,9 @@ create_link() {
 setup_yazi() {
     print_message "设置 Yazi 配置..."
     mkdir -p ~/.config/yazi
-    create_link "$DOTFILES/yazi/yazi.toml" ~/.config/yazi/yazi.toml
-    create_link "$DOTFILES/yazi/keymap.toml" ~/.config/yazi/keymap.toml
-    create_link "$DOTFILES/yazi/theme.toml" ~/.config/yazi/theme.toml
+    create_link "$DOTFILES/configs/terminal/yazi/yazi.toml" ~/.config/yazi/yazi.toml
+    create_link "$DOTFILES/configs/terminal/yazi/keymap.toml" ~/.config/yazi/keymap.toml
+    create_link "$DOTFILES/configs/terminal/yazi/theme.toml" ~/.config/yazi/theme.toml
     print_message "Yazi 配置完成！"
 }
 
@@ -44,17 +44,20 @@ main() {
     mkdir -p ~/.config/karabiner
     mkdir -p ~/.tmux
     mkdir -p ~/.config/vscode_neovim
+    mkdir -p ~/.config/ghostty
     # mkdir -p ~/.config/aerospace
 
     # 创建配置文件链接
-    create_link "$DOTFILES/nvim" ~/.config/nvim
-    create_link "$DOTFILES/wezterm/.wezterm.lua" ~/.wezterm.lua
-    create_link "$DOTFILES/karabiner/karabiner.json" ~/.config/karabiner/karabiner.json
-    create_link "$DOTFILES/tmux/.tmux.conf" ~/.tmux.conf
-    create_link "$DOTFILES/zsh/.zshrc" ~/.zshrc
-    create_link "$DOTFILES/ideavim/.ideavimrc" ~/.ideavimrc
-    create_link "$DOTFILES/vscode/vscode_neovim/init.lua" ~/.config/vscode_neovim/init.lua
-    # create_link "$DOTFILES/aerospace/.aerospace.toml" ~/.config/aerospace/aerospace.toml
+    create_link "$DOTFILES/configs/editor/nvim" ~/.config/nvim
+    create_link "$DOTFILES/configs/terminal/wezterm/.wezterm.lua" ~/.wezterm.lua
+    create_link "$DOTFILES/configs/system/karabiner/karabiner.json" ~/.config/karabiner/karabiner.json
+    create_link "$DOTFILES/configs/terminal/tmux/.tmux.conf" ~/.tmux.conf
+    create_link "$DOTFILES/configs/shell/zsh/.zshrc" ~/.zshrc
+    create_link "$DOTFILES/configs/editor/ideavim/.ideavimrc" ~/.ideavimrc
+    create_link "$DOTFILES/configs/editor/vscode/vscode_neovim/init.lua" ~/.config/vscode_neovim/init.lua
+    create_link "$DOTFILES/configs/shell/starship/starship.toml" ~/.config/starship.toml
+    create_link "$DOTFILES/configs/terminal/ghostty/config" ~/.config/ghostty/config
+    # create_link "$DOTFILES/configs/system/aerospace/.aerospace.toml" ~/.config/aerospace/aerospace.toml
 
     # 设置 Yazi 配置
     setup_yazi

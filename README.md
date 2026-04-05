@@ -89,6 +89,7 @@ cd ~/.dotfiles
 |------|------|
 | Hack Nerd Font | 编程字体 |
 | JetBrains Mono Nerd Font | 编程字体 |
+| MesloLGS Nerd Font | 编程字体 |
 | starship | 跨 shell 提示符 |
 
 ### Neovim 配置
@@ -401,13 +402,16 @@ brew install pear-devs/pear-desktop
 
 | 配置 | 源文件 | 目标位置 |
 |------|--------|----------|
-| Neovim | `nvim/` | `~/.config/nvim` |
-| Karabiner | `karabiner/karabiner.json` | `~/.config/karabiner/karabiner.json` |
-| Tmux | `tmux/.tmux.conf` | `~/.tmux.conf` |
-| Zsh | `zsh/.zshrc` | `~/.zshrc` |
-| IdeaVim | `ideavim/.ideavimrc` | `~/.ideavimrc` |
-| VSCode Neovim | `vscode/vscode_neovim/init.lua` | `~/.config/vscode_neovim/init.lua` |
-| Yazi | `yazi/*.toml` | `~/.config/yazi/*.toml` |
+| Neovim | `configs/editor/nvim/` | `~/.config/nvim` |
+| VSCode Neovim | `configs/editor/vscode/vscode_neovim/init.lua` | `~/.config/vscode_neovim/init.lua` |
+| IdeaVim | `configs/editor/ideavim/.ideavimrc` | `~/.ideavimrc` |
+| Zsh | `configs/shell/zsh/.zshrc` | `~/.zshrc` |
+| Starship | `configs/shell/starship/starship.toml` | `~/.config/starship.toml` |
+| Tmux | `configs/terminal/tmux/.tmux.conf` | `~/.tmux.conf` |
+| Wezterm | `configs/terminal/wezterm/.wezterm.lua` | `~/.wezterm.lua` |
+| Ghostty | `configs/terminal/ghostty/config` | `~/.config/ghostty/config` |
+| Yazi | `configs/terminal/yazi/*.toml` | `~/.config/yazi/*.toml` |
+| Karabiner | `configs/system/karabiner/karabiner.json` | `~/.config/karabiner/karabiner.json` |
 
 > 💡 原有配置文件会自动备份为 `*.backup`
 

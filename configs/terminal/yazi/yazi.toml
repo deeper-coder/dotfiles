@@ -2,7 +2,7 @@
 # 如果遇到任何问题，请在 https://github.com/yazi-rs/schemas 提交 issue。
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
-[manager]
+[mgr]
 ratio          = [ 2, 4, 3 ]  # 左侧文件列表、预览窗口、右侧属性窗口的比例
 sort_by        = "alphabetical"  # 排序方式：按字母顺序
 sort_sensitive = false  # 排序是否区分大小写
@@ -25,7 +25,7 @@ cache_dir       = ""      # 缓存目录
 image_delay     = 30      # 图片预览延迟(毫秒)
 image_filter    = "triangle"  # 图片缩放滤镜
 image_quality   = 75      # 图片质量
-sixel_fraction  = 15      # Sixel 图形分辨率
+# sixel_fraction  = 15      # Sixel 图形分辨率 (removed in yazi 0.4)
 ueberzug_scale  = 1      # Ueberzug 缩放比例
 ueberzug_offset = [ 0, 0, 0, 0 ]  # Ueberzug 偏移量 [上, 右, 下, 左]
 
@@ -59,7 +59,7 @@ play = [
 [open]
 rules = [
 	# 文件夹
-	{ name = "*/", use = [ "edit", "open", "reveal" ] },
+	{ url = "*/", use = [ "edit", "open", "reveal" ] },
 	# 文本文件
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
 	# 图片文件
@@ -74,7 +74,7 @@ rules = [
 	# 空文件
 	{ mime = "inode/empty", use = [ "edit", "reveal" ] },
 	# 其他文件
-	{ name = "*", use = [ "open", "reveal" ] },
+	{ url = "*", use = [ "open", "reveal" ] },
 ]
 
 [tasks]
@@ -89,10 +89,10 @@ suppress_preload = false      # 是否禁用预加载
 
 fetchers = [
 	# MIME 类型检测
-	{ id = "mime", name = "*", run = "mime", if = "!mime", prio = "high" },
+	{ id = "mime", url = "*", run = "mime.local", prio = "high" },
 ]
 spotters = [
-	{ name = "*/", run = "folder" },
+	{ url = "*/", run = "folder" },
 	# 代码文件
 	{ mime = "text/*", run = "code" },
 	{ mime = "*/{xml,javascript,wine-extension-ini}", run = "code" },
@@ -102,7 +102,7 @@ spotters = [
 	# 视频文件
 	{ mime = "video/*", run = "video" },
 	# 其他文件
-	{ name = "*", run = "file" },
+	{ url = "*", run = "file" },
 ]
 preloaders = [
 	# 图片预加载
@@ -117,7 +117,7 @@ preloaders = [
 	{ mime = "application/ms-opentype", run = "font" },
 ]
 previewers = [
-	{ name = "*/", run = "folder", sync = true },
+	{ url = "*/", run = "folder", sync = true },
 	# 代码预览
 	{ mime = "text/*", run = "code" },
 	{ mime = "*/{xml,javascript,wine-extension-ini}", run = "code" },
@@ -133,18 +133,18 @@ previewers = [
 	# 压缩包预览
 	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", run = "archive" },
 	{ mime = "application/{debian*-package,redhat-package-manager,rpm,android.package-archive}", run = "archive" },
-	{ name = "*.{AppImage,appimage}", run = "archive" },
+	{ url = "*.{AppImage,appimage}", run = "archive" },
 	# 虚拟磁盘/磁盘镜像预览
 	{ mime = "application/{iso9660-image,qemu-disk,ms-wim,apple-diskimage}", run = "archive" },
 	{ mime = "application/virtualbox-{vhd,vhdx}", run = "archive" },
-	{ name = "*.{img,fat,ext,ext2,ext3,ext4,squashfs,ntfs,hfs,hfsx}", run = "archive" },
+	{ url = "*.{img,fat,ext,ext2,ext3,ext4,squashfs,ntfs,hfs,hfsx}", run = "archive" },
 	# 字体预览
 	{ mime = "font/*", run = "font" },
 	{ mime = "application/ms-opentype", run = "font" },
 	# 空文件预览
 	{ mime = "inode/empty", run = "empty" },
 	# 其他文件预览
-	{ name = "*", run = "file" },
+	{ url = "*", run = "file" },
 ]
 
 [input]
@@ -198,13 +198,13 @@ delete_offset	= [ 0, 0, 70, 20 ]
 
 # 覆盖
 overwrite_title   = "确定要覆盖文件吗?"
-overwrite_content = "将覆盖以下文件:"
+overwrite_body    = "将覆盖以下文件:"
 overwrite_origin  = "center"
 overwrite_offset  = [ 0, 0, 50, 15 ]
 
 # 退出
 quit_title   = "确定要退出吗?"
-quit_content = "以下任务仍在运行中，确定要退出吗?"
+quit_body    = "以下任务仍在运行中，确定要退出吗?"
 quit_origin  = "center"
 quit_offset  = [ 0, 0, 50, 15 ]
 

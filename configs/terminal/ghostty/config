@@ -1,0 +1,10 @@
+font-family = MesloLGS NF
+font-size = 14
+
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+
+# Window/Pane navigation
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+k=goto_split:top
+keybind = ctrl+l=goto_split:right

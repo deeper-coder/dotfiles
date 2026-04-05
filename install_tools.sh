@@ -115,6 +115,7 @@ main() {
     print_message "安装字体和主题..."
     install_tool "Hack Nerd Font" "--cask font-hack-nerd-font"
     install_tool "JetBrains Mono Nerd Font" "--cask font-jetbrains-mono-nerd-font"
+    install_tool "MesloLGS Nerd Font" "--cask font-meslo-lg-nerd-font"
     install_tool "starship" "starship"
 
     # ===== Neovim 配置 =====
