@@ -16,7 +16,11 @@ print_message() {
 create_link() {
     local src=$1
     local dst=$2
-    if [ -e "$dst" ]; then
+    
+    if [ -L "$dst" ]; then
+        rm -f "$dst"
+        print_message "删除已存在的符号链接 $dst"
+    elif [ -e "$dst" ]; then
         print_message "备份已存在的 $dst 到 ${dst}.backup"
         mv "$dst" "${dst}.backup"
     fi
