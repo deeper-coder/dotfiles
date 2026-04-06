@@ -31,6 +31,12 @@ setup_yazi() {
     create_link "$DOTFILES/configs/terminal/yazi/yazi.toml" ~/.config/yazi/yazi.toml
     create_link "$DOTFILES/configs/terminal/yazi/keymap.toml" ~/.config/yazi/keymap.toml
     create_link "$DOTFILES/configs/terminal/yazi/theme.toml" ~/.config/yazi/theme.toml
+    ya pkg add Rolv-Apneseth/starship
+    ya pkg add XYenon/clipboard
+    ya pkg add yazi-rs/plugins:smart-enter
+    ya pkg add Ape/open-with-cmd
+    ya pkg add yazi-rs/plugins:zoom
+    create_link "$DOTFILES/configs/terminal/yazi/init.lua" ~/.config/yazi/init.lua
     print_message "Yazi 配置完成！"
 }
 

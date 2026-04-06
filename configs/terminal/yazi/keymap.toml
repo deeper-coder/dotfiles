@@ -156,6 +156,16 @@ keymap = [
 	{ on = "<F1>", run = "help", desc = "Open help" },
 ]
 
+prepend_keymap = [
+	{ on = "y",     run = [ "yank", 'plugin clipboard -- --action=copy' ] },
+	{ on = "<C-p>", run = [ 'plugin clipboard -- --action=paste' ] },
+	{ on = "l",     run = "plugin smart-enter",            desc = "Enter the child directory, or open the file" },
+	{ on = "o",     run = "plugin open-with-cmd -- block", desc = "Open with command in the terminal" },
+	{ on = "O",     run = "plugin open-with-cmd",          desc = "Open with command" },
+	{ on = "+",     run = "plugin zoom 1",                 desc = "Zoom in hovered file" },
+	{ on = "-",     run = "plugin zoom -1",                desc = "Zoom out hovered file" },
+]
+
 [tasks]
 
 keymap = [

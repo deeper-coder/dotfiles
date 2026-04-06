@@ -62,7 +62,7 @@
     "when": "inQuickOpen"
   },
   {
-    "key": "shit+tab",
+    "key": "shift+tab",
     "command": "selectPrevSuggestion",
     "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
   },
